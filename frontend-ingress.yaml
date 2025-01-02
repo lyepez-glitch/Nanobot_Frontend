@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nanobot-frontend-ingress
+  namespace: default
+spec:
+  rules:
+  - host: a8b7881d99a3041a19c93c1694bbaf1c-1807494716.us-east-1.elb.amazonaws.com  # Replace with the actual domain or LoadBalancer DNS
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nanobot-frontend
+            port:
+              number: 80
