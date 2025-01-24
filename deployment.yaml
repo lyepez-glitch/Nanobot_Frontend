@@ -1,22 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nanobot-frontend
+  name: frontend-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: nanobot-frontend
+      app: frontend
   template:
     metadata:
       labels:
-        app: nanobot-frontend
+        app: frontend
     spec:
       containers:
-      - name: nanobot-frontend
-        image: 411307820369.dkr.ecr.us-east-1.amazonaws.com/nanobot-frontend:1.7
+      - name: frontend
+        image: 192.168.49.2:5000/frontend:v12
+        imagePullPolicy: Never
         ports:
         - containerPort: 3000
-        env:
-        - name: NEXT_PUBLIC_BACKEND_URL
-          value: "http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com"

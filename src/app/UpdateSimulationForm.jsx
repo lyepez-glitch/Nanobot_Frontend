@@ -8,7 +8,7 @@ export default function UpdateSimulationForm() {
   const [nanobots, setNanobots] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
+  const backendUrl = 'http://localhost:8081';
 
   useEffect(() => {
     // Fetch nanobot types from the server

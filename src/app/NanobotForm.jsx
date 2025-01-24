@@ -13,7 +13,7 @@ const NanobotForm = ({setNanobots}) => {
     event.preventDefault();
 
     const newNanobot = { name, userId, status };
-    const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com'
+    const backendUrl = 'http://localhost:8081'
     console.log("Backend URL:", process.env.NEXT_PUBLIC_BACKEND_URL);
 
     try {

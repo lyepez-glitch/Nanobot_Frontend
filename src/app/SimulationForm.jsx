@@ -8,7 +8,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
     const [count, setCount] = useState(0);
     const [nanobotId, setNanobotId] = useState('');
     const [success, setSuccess] = useState('');
-    const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
+    const backendUrl = 'http://localhost:8081';
 
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
 
     useEffect(() => {
         async function fetchNanobotTypes() {
-            const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
+            const backendUrl = 'http://localhost:8081';
             try {
                 const response = await fetch(`${backendUrl}/nanobots`);
                 const data = await response.json();
@@ -84,7 +84,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
                 startTime: Date.now(),
                 userId,
                 nanobotId: data.id,
-                results: simNanoData.results,
+                results: JSON.stringify(simNanoData.results),
             };
 
             // Start the simulation

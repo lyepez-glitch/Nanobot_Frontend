@@ -7,7 +7,8 @@ const UserLookupForm = () => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState('');
   const [userSearchId,setUserSearchId] = useState('')
-  const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com'
+  const backendUrl = 'http://localhost:8081'
+  console.log('backend url',backendUrl);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

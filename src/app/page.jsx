@@ -12,6 +12,7 @@ import UpdateSimulationForm from './UpdateSimulationForm';
 import DeleteSimulationForm from './DeleteSimulation';
 import Slider from './Slider';
 
+
 export default function Home() {
     const [simulationResults, setSimulationResults] = useState([
         { id: 1, state: 'healthy' },
@@ -25,6 +26,7 @@ export default function Home() {
     const [timeLeft, setTimeLeft] = useState(30);
     const [userId,setUserId] = useState(null)
     const [nanobots, setNanobots] = useState([]);
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
     useEffect(() => {
         let timerId;
@@ -72,56 +74,64 @@ export default function Home() {
     };
 
     return (
-        <div className="max-w-screen-lg mx-auto text-center">
+        <main>
+            {isAuthenticated?(
+                <div className="max-w-screen-lg mx-auto text-center">
 
-            <UserForm setUserId={setUserId}/>
-            <UserLookupForm/>
-            <NanobotForm setNanobots={setNanobots}/>
-            <NanobotSearchForm/>
-            <SimulationForm nanobots={nanobots} setNanobots={setNanobots} setSimulationResults={setSimulationResults}userId={userId} simulationResults={simulationResults} onSubmit={handleSimulationParams} />
-            <SearchSimulation/>
-            <UpdateSimulationForm/>
-            <DeleteSimulationForm/>
+                <UserForm setUserId={setUserId}/>
+                <UserLookupForm/>
+                <NanobotForm setNanobots={setNanobots}/>
+                <NanobotSearchForm/>
+                <SimulationForm nanobots={nanobots} setNanobots={setNanobots} setSimulationResults={setSimulationResults}userId={userId} simulationResults={simulationResults} onSubmit={handleSimulationParams} />
+                <SearchSimulation/>
+                <UpdateSimulationForm/>
+                <DeleteSimulationForm/>
 
-            <h2 className="text-2xl font-semibold mb-4">Nanobot Simulation</h2>
-            <Slider
-                min={0}
-                max={30}
-                step={1}
-                label="Seconds"
-                onChange={handleSecChange}
-            />
+                <h2 className="text-2xl font-semibold mb-4">Nanobot Simulation</h2>
+                <Slider
+                    min={0}
+                    max={30}
+                    step={1}
+                    label="Seconds"
+                    onChange={handleSecChange}
+                />
 
 
-            <div className="mt-4">
-                <p className="text-gray-600">{status}</p>
-                <p className="text-lg font-medium">Time left: {timeLeft}s</p>
-            </div>
-
-            <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4">Cell States:</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    {simulationResults.map((cell) => (
-                        <Cell
-                            key={cell.id}
-                            id={cell.id}
-                            state={cell.state}
-                            onClick={() => console.log(`Cell ${cell.id} clicked`)}
-                        />
-                    ))}
+                <div className="mt-4">
+                    <p className="text-gray-600">{status}</p>
+                    <p className="text-lg font-medium">Time left: {timeLeft}s</p>
                 </div>
-            </div>
 
-            {isRunning && (
-                <div className="text-center mt-6">
-                    <button
-                        onClick={stopSimulation}
-                        className="bg-red-500 text-white px-6 py-2 rounded shadow hover:bg-red-600"
-                    >
-                        Stop Simulation
-                    </button>
+                <div className="mt-8">
+                    <h3 className="text-lg font-semibold mb-4">Cell States:</h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {simulationResults.map((cell) => (
+                            <Cell
+                                key={cell.id}
+                                id={cell.id}
+                                state={cell.state}
+                                onClick={() => console.log(`Cell ${cell.id} clicked`)}
+                            />
+                        ))}
+                    </div>
                 </div>
+
+                {isRunning && (
+                    <div className="text-center mt-6">
+                        <button
+                            onClick={stopSimulation}
+                            className="bg-red-500 text-white px-6 py-2 rounded shadow hover:bg-red-600"
+                        >
+                            Stop Simulation
+                        </button>
+                    </div>
+                )}
+            </div>
+            ):(
+                <Signup/>
+                <Login setUserId={setUserId}/>
             )}
-        </div>
+        </main>
+
     );
 }

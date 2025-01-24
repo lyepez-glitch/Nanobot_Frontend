@@ -8,7 +8,7 @@ const UserForm = ({setUserId}) => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com'
+  const backendUrl = 'http://localhost:8081'
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const UserForm = ({setUserId}) => {
       });
 
       const data = await res.json();
-      console.log('user data',data);
+      console.log('user data',data,res.status);
 
       if (res.status === 201) {
         setSuccessMessage('User created successfully!');
