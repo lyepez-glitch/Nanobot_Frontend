@@ -13,7 +13,7 @@ const NanobotSearchForm = ({}) => {
     setLoading(true);
     setError('');
     setNanobot(null);
-    const backendUrl = 'http://localhost:8081';
+    const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
 
     try {
       const response = await fetch(`${backendUrl}/nanobots/${id}`);

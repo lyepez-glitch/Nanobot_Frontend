@@ -8,7 +8,8 @@ export default function UpdateSimulationForm() {
   const [nanobots, setNanobots] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const backendUrl = 'http://localhost:8081';
+  const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
+
 
   useEffect(() => {
     // Fetch nanobot types from the server
@@ -18,7 +19,7 @@ export default function UpdateSimulationForm() {
         const data = await response.json();
         setNanobots(data);
       } catch (error) {
-        console.error('Error fetching nanobot types:', error);
+        console.error('Error fetching nanobot types:');
       }
     }
 
@@ -40,7 +41,7 @@ export default function UpdateSimulationForm() {
         targetCancer,
         repairDamaged,
       };
-      console.log('updatePayload',updatePayload);
+
 
       const response = await fetch(`${backendUrl}/simulations/${simulationId}`, {
         method: 'PUT',
@@ -57,7 +58,7 @@ export default function UpdateSimulationForm() {
       const data = await response.json();
       setSuccessMessage('Simulation updated successfully!');
       // onUpdate(data);
-      console.log('updated data ',data);
+
     } catch (error) {
       setSuccessMessage('');
       setErrorMessage(error.message);

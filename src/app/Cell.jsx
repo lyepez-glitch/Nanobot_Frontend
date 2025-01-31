@@ -11,7 +11,7 @@ export default function Cell({ id, state, onClick }) {
           className={`p-4 m-2 rounded-lg ${stateColors[state]}`}
           onClick={() => onClick(id)}
       >
-          <p>Cell {id} - {state}</p>
+          <p>Cell  - {state}</p>
       </div>
   );
 }

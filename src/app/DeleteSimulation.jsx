@@ -15,20 +15,20 @@ export default function DeleteSimulationForm() {
         }
 
         try {
-            const backendUrl = 'http://localhost:8081';
+            const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
             const response = await fetch(`${backendUrl}/simulations/${simulationId}`, {
                 method: 'DELETE',
             });
 
             if (!response.ok) {
-                throw new Error(`Failed to delete simulation with ID: ${simulationId}`);
+                throw new Error(`Failed to delete simulation`);
             }
 
             setSuccessMessage(`Simulation with ID: ${simulationId} was successfully deleted.`);
             setErrorMessage('');
             setSimulationId(''); // Clear input field
         } catch (error) {
-            console.error('Error deleting simulation:', error);
+            console.error('Error deleting simulation:');
             setErrorMessage(error.message);
             setSuccessMessage('');
         }

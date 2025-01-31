@@ -8,7 +8,7 @@ const UserForm = ({setUserId}) => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const backendUrl = 'http://localhost:8081'
+  const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const UserForm = ({setUserId}) => {
       });
 
       const data = await res.json();
-      console.log('user data',data,res.status);
+
 
       if (res.status === 201) {
         setSuccessMessage('User created successfully!');

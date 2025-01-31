@@ -1,7 +1,7 @@
 // components/UserLogin.js
 import { useState } from 'react';
 
-const Login = ({setUserId}) => {
+const Login = ({setUserId,onLoginSuccess}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -32,6 +32,7 @@ const Login = ({setUserId}) => {
         setEmail('');
         setPassword('');
         setUserId(data.id);
+        onLoginSuccess();
       } else {
         setError(data.error || 'Login failed. Please check your credentials');
       }

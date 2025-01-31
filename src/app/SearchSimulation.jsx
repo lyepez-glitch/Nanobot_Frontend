@@ -15,7 +15,7 @@ export default function SearchSimulation() {
 
     try {
       setError(""); // Clear previous errors
-      const backendUrl = 'http://localhost:8081';
+      const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
       const response = await fetch(`${backendUrl}/simulations/${simulationId}`);
       if (!response.ok) {
         throw new Error("Simulation not found.");

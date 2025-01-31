@@ -11,7 +11,8 @@ import SearchSimulation from './SearchSimulation';
 import UpdateSimulationForm from './UpdateSimulationForm';
 import DeleteSimulationForm from './DeleteSimulation';
 import Slider from './Slider';
-
+import Signup from './Signup';
+import Login from './Login';
 
 export default function Home() {
     const [simulationResults, setSimulationResults] = useState([
@@ -26,7 +27,8 @@ export default function Home() {
     const [timeLeft, setTimeLeft] = useState(30);
     const [userId,setUserId] = useState(null)
     const [nanobots, setNanobots] = useState([]);
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
 
     useEffect(() => {
         let timerId;
@@ -72,6 +74,9 @@ export default function Home() {
     const handleSecChange = (value) => {
         setTimeLeft(Number(value));
     };
+    const handleLoginSuccess = () => {
+        setIsAuthenticated(true);
+    };
 
     return (
         <main>
@@ -110,7 +115,7 @@ export default function Home() {
                                 key={cell.id}
                                 id={cell.id}
                                 state={cell.state}
-                                onClick={() => console.log(`Cell ${cell.id} clicked`)}
+                                onClick={() => console.log(`Cell clicked`)}
                             />
                         ))}
                     </div>
@@ -128,8 +133,11 @@ export default function Home() {
                 )}
             </div>
             ):(
-                <Signup/>
-                <Login setUserId={setUserId}/>
+                <>
+                    <Signup/>
+                    <Login onLoginSuccess={handleLoginSuccess} setUserId={setUserId}/>
+                </>
+
             )}
         </main>
 

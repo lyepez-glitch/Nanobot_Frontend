@@ -1,5 +1,6 @@
 // components/UserForm.js
 import { useState } from 'react';
+import bcrypt from 'bcryptjs';
 
 const Signup = ({}) => {
   const [username, setUsername] = useState('');
@@ -15,6 +16,9 @@ const Signup = ({}) => {
     setError('');
     setSuccessMessage('');
     setIsSubmitting(true);
+
+
+
 
     try {
       const res = await fetch(`${backendUrl}/users`, {
@@ -78,10 +82,10 @@ const Signup = ({}) => {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-600">Password</label>
+            <label htmlFor="passwordHash" className="block text-gray-600">Password</label>
             <input
               type="password"
-              id="password"
+              id="passwordHash"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -89,7 +93,7 @@ const Signup = ({}) => {
             />
           </div>
 
-          <buttons
+          <button
             type="submit"
             disabled={isSubmitting}
             className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
