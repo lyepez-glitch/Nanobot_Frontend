@@ -9,8 +9,8 @@ const Signup = ({}) => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const backendUrl = 'http://localhost:8081';
-
+  // const backendUrl = 'http://localhost:8081';
+  const backendUrl = 'https://nanobot-backend.onrender.com/';
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');

@@ -13,7 +13,10 @@ const NanobotSearchForm = ({}) => {
     setLoading(true);
     setError('');
     setNanobot(null);
-    const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
+    // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
+
+    const backendUrl = 'https://nanobot-backend.onrender.com/';
+
 
     try {
       const response = await fetch(`${backendUrl}/nanobots/${id}`);

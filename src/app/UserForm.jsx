@@ -8,7 +8,8 @@ const UserForm = ({setUserId}) => {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
+  // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com'
+  const backendUrl = 'https://nanobot-backend.onrender.com/';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ const UserForm = ({setUserId}) => {
       });
 
       const data = await res.json();
-
+      console.log('user data',data);
 
       if (res.status === 201) {
         setSuccessMessage('User created successfully!');

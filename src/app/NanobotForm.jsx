@@ -13,9 +13,10 @@ const NanobotForm = ({setNanobots}) => {
     event.preventDefault();
 
     const newNanobot = { name, userId, status };
-    const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
-
-
+    // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com'
+    // const backendUrl = "https://nanobot-backend.onrender.com/";
+    const backendUrl = "https://nanobot-backend.onrender.com/";
+    console.log("Backend URL:", process.env.NEXT_PUBLIC_BACKEND_URL);
 
     try {
       const response = await fetch(`${backendUrl}/nanobots`, {

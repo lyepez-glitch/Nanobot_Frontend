@@ -15,20 +15,21 @@ export default function DeleteSimulationForm() {
         }
 
         try {
-            const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
+            // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
+            const backendUrl = "https://nanobot-backend.onrender.com/";
             const response = await fetch(`${backendUrl}/simulations/${simulationId}`, {
                 method: 'DELETE',
             });
 
             if (!response.ok) {
-                throw new Error(`Failed to delete simulation`);
+                throw new Error(`Failed to delete simulation with ID: ${simulationId}`);
             }
 
             setSuccessMessage(`Simulation with ID: ${simulationId} was successfully deleted.`);
             setErrorMessage('');
             setSimulationId(''); // Clear input field
         } catch (error) {
-            console.error('Error deleting simulation:');
+            console.error('Error deleting simulation:', error);
             setErrorMessage(error.message);
             setSuccessMessage('');
         }

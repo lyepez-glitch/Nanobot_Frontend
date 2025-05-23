@@ -15,7 +15,8 @@ export default function SearchSimulation() {
 
     try {
       setError(""); // Clear previous errors
-      const backendUrl = process.env.NEXT_PUBLIC_RENDER_URL;
+      // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
+      const backendUrl = 'https://nanobot-backend.onrender.com/';
       const response = await fetch(`${backendUrl}/simulations/${simulationId}`);
       if (!response.ok) {
         throw new Error("Simulation not found.");
