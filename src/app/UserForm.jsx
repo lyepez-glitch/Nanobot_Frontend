@@ -1,13 +1,14 @@
 // components/UserForm.js
 import { useState } from 'react';
 
-const UserForm = ({setUserId}) => {
+const UserForm = ({setUserId,setSignUp}) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [clicked, setClicked] = useState(false);
   // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com'
   const backendUrl = 'https://nanobot-backend.onrender.com/';
 
@@ -18,7 +19,7 @@ const UserForm = ({setUserId}) => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch(`${backendUrl}/users`, {
+      const res = await fetch(`${backendUrl}users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,6 +36,7 @@ const UserForm = ({setUserId}) => {
         setUserId(data.id);
         setEmail('');
         setPassword('');
+        setSignUp(true);
       } else {
         setError(data.error || 'Something went wrong');
       }
@@ -47,16 +49,18 @@ const UserForm = ({setUserId}) => {
   };
 
   return (
-    <div>
-      <h1>Create User</h1>
+    <div id="signUpContainer">
+
       {error && <div style={{ color: 'red' }}>{error}</div>}
       {successMessage && <div style={{ color: 'green' }}>{successMessage}</div>}
-      <form onSubmit={handleSubmit}>
+      <form id="signUpForm" onSubmit={handleSubmit}>
+      <h2 id="signupHeader">Sign up for a new account</h2>
+
         <div>
           <label htmlFor="username">Username</label>
           <input
+            className="username"
             type="text"
-            id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -64,9 +68,11 @@ const UserForm = ({setUserId}) => {
         </div>
         <div>
           <label htmlFor="email">Email</label>
+
           <input
+            className={`email ${clicked?'':''}`}
+            onClick={() => setClicked(true)}
             type="email"
-            id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -75,14 +81,14 @@ const UserForm = ({setUserId}) => {
         <div>
           <label htmlFor="password">Password</label>
           <input
+            className="password"
             type="password"
-            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <button type="submit" disabled={isSubmitting}>
+        <button id="signUpBtn" type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
       </form>
