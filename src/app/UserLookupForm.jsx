@@ -14,7 +14,7 @@ const UserLookupForm = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${backendUrl}/users/${userSearchId}`);
+      const response = await fetch(`${backendUrl}users/${userSearchId}`);
       if (!response.ok) {
         throw new Error('User not found');
       }
@@ -29,28 +29,36 @@ const UserLookupForm = () => {
   };
 
   return (
-    <div>
-      <h1>Look Up User by ID</h1>
-      <form onSubmit={handleSubmit}>
+    <div classname="userLookupContainer">
+     <h1 style={{marginLeft:'5px'}}>Look Up User by ID</h1>
+    <div className="userLookup">
+
+      <form className="lookupForm" onSubmit={handleSubmit}>
         <input
+          className="lookupInput"
           type="number"
           placeholder="Enter User ID"
           value={userSearchId}
           onChange={(e) => setUserSearchId(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button className="lookupBtn" type="submit">Search</button>
       </form>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className="lookupErr" style={{ color: 'red' }}>{error}</p>}
 
       {user && (
-        <div>
-          <h2>User Details</h2>
-          <p>Username: {user.username}</p>
-          <p>Email: {user.email}</p>
+        <div className="userDetailsContainer">
+          <h2 className="userDetailsHeader">User Details</h2>
+          <p style={{fontSize:'20px'}} className="margin-left">{user.username}</p>
+          <div className="margin-left userUsername">username</div>
+          <p style={{fontSize:'20px'}} className="margin-left">{user.email}</p>
+          <div className="margin-left userEmail">email</div>
         </div>
       )}
     </div>
+    </div>
+
+
   );
 };
 

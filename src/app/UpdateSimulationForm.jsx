@@ -15,7 +15,7 @@ export default function UpdateSimulationForm() {
     // Fetch nanobot types from the server
     async function fetchNanobotTypes() {
       try {
-        const response = await fetch(`${backendUrl}/nanobots`);
+        const response = await fetch(`${backendUrl}nanobots`);
         const data = await response.json();
         setNanobots(data);
       } catch (error) {

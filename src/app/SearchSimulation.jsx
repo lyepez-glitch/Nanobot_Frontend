@@ -17,7 +17,7 @@ export default function SearchSimulation() {
       setError(""); // Clear previous errors
       // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
       const backendUrl = 'https://nanobot-backend.onrender.com/';
-      const response = await fetch(`${backendUrl}/simulations/${simulationId}`);
+      const response = await fetch(`${backendUrl}simulations/${simulationId}`);
       if (!response.ok) {
         throw new Error("Simulation not found.");
       }
@@ -30,14 +30,13 @@ export default function SearchSimulation() {
   };
 
   return (
-    <div className="space-y-4 p-4 bg-white shadow-md rounded-lg">
-      <h3 className="text-lg font-semibold">Search Simulation by ID</h3>
-      <form onSubmit={handleSearch} className="space-y-4">
-        <div>
-          <label htmlFor="simulationId" className="block text-sm font-medium">
-            Simulation ID:
-          </label>
+    <div className="searchSimContainer space-y-4  rounded-lg">
+      <h3 style={{marginLeft: '7px'}} className="text-lg">Search Simulation by ID</h3>
+      <form onSubmit={handleSearch} className="searchSimForm space-y-4">
+        <div className = "searchSimInputDiv">
+
           <input
+            className="searchSimInput"
             type="text"
             id="simulationId"
             value={simulationId}
@@ -48,13 +47,13 @@ export default function SearchSimulation() {
         </div>
         <button
           type="submit"
-          className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
         >
           Search
         </button>
       </form>
 
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="searchSimErr text-red-500 text-sm">{error}</p>}
 
       {simulationData && (
         <div className="mt-4">

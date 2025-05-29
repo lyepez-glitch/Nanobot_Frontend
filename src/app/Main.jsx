@@ -1,30 +1,65 @@
 // components/UserLogin.js
 import { useState,useEffect } from 'react';
 import UserLookupForm from './UserLookupForm';
+import NanobotForm from './NanobotForm';
+import SimulationForm from './SimulationForm';
+import Nanobots from './Nanobots';
+import SearchSimulation from './SearchSimulation';
+import Simulations from './Simulations';
 
-const Main = ({}) => {
+const Main = ({setNanobots,setSims,nanobots,setSimulationResults,userId,simulationResults,onSubmit}) => {
   const [userPage, setUserPage] = useState(false);
+  const [nanobotPage, setNanobotPage] = useState(false);
+  const [simPage, setSimPage] = useState(false);
+  const [addNano, setAddNano] = useState(false);
+  const [addSim, setAddSim] = useState(false);
   const handleUserClick = (e)=>{
     console.log('clicked');
     setUserPage(true);
+    setNanobotPage(false);
+    setSimPage(false);
+  }
+  const handleNanobotClick = (e)=>{
+    console.log('clicked');
+    setNanobotPage(true);
+    setUserPage(false);
+    setSimPage(false);
+  }
+
+  const handleSimClick = (e)=>{
+    console.log('clicked');
+    setNanobotPage(false);
+    setUserPage(false);
+    setSimPage(true);
   }
 
   return (
-    <div className="mainContainer">
-        <div className="asideContainer">
+    <>
+    <div className="asideContainer">
         <aside className="aside">
           <ul className="nav">
-            <li>
+            <li className="userBtn">
               <button onClick={(e)=>handleUserClick(e)} className="nav-item">
                 Users
               </button>
             </li>
+            <li className="userBtn">
+              <button onClick={(e)=>handleNanobotClick(e)} className="nav-item">
+                Nanobots
+              </button>
+            </li>
+            <li className="userBtn">
+              <button onClick={(e)=>handleSimClick(e)} className="nav-item">
+                Simulations
+              </button>
+            </li>
           </ul>
         </aside>
-
-
       </div>
-      <div>
+
+      <div className="mainContainer">
+
+      <div className="mainContent">
         {
           userPage?(
             <UserLookupForm/>
@@ -32,9 +67,39 @@ const Main = ({}) => {
             <></>
           )
         }
+        {
+          nanobotPage?(
+
+              addNano?(
+
+                <NanobotForm setNanobots={setNanobots}/>
+              ):(
+                <Nanobots setAddNano={setAddNano}/>
+              )
+
+
+          ):(
+            <></>
+          )
+        }
+        {
+          simPage?(
+
+            addSim?(
+
+              <SimulationForm nanobots={nanobots} setNanobots={setNanobots} setSimulationResults={setSimulationResults}userId={userId} simulationResults={simulationResults} onSubmit={onSubmit} setSims={setSims}/>
+            ):(
+              <Simulations setAddSim={setAddSim}/>
+            )
+        ):(
+          <></>
+        )
+        }
       </div>
 
     </div>
+    </>
+
 
   );
 };

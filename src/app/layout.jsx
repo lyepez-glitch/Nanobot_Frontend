@@ -13,7 +13,7 @@ export default function RootLayout({ children, title = 'Nanobot Simulation Dashb
                             <h1 className="text-3xl font-semibold">{title}</h1>
                         </div>
                     </header>
-                    <main className="flex-1 w-full max-w-screen-lg px-4 py-6">{children}</main>
+                    <main id="main" className="main flex-1 w-full max-w-screen-lg px-4 py-6">{children}</main>
                     <footer className="w-full bg-gray-800 text-gray-300 py-4 text-center text-sm">
                         &copy; 2024 Nanobot Simulation. All rights reserved.
                     </footer>

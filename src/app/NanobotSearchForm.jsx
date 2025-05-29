@@ -6,7 +6,7 @@ const NanobotSearchForm = ({}) => {
   const [id, setId] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [nanobot,setNanobot] = useState({});
+  const [nanobot,setNanobot] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ const NanobotSearchForm = ({}) => {
 
 
     try {
-      const response = await fetch(`${backendUrl}/nanobots/${id}`);
+      const response = await fetch(`${backendUrl}nanobots/${id}`);
       if (!response.ok) {
         throw new Error('Nanobot not found');
       }
@@ -34,28 +34,28 @@ const NanobotSearchForm = ({}) => {
   };
 
   return (
-    <div>
-      <h1>Search Nanobot by ID</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="nanoSearchContainer">
+      <h1 style={{ marginLeft: '7px'}}>Search Nanobot by ID</h1>
+      <form className="nanoSearchForm" onSubmit={handleSubmit}>
         <div>
-          <label>
-            Nanobot ID:
+
             <input
+              placeholder="Nanobot ID"
               type="number"
               value={id}
               onChange={(e) => setId(e.target.value)}
               required
             />
-          </label>
+
         </div>
-        <button type="submit">Search</button>
+        <button className="nanoSearchBtn" type="submit">Search</button>
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: 'red',textAlign: 'center', marginTop: '5px' }}>{error}</p>}
 
-      {nanobot && (
-        <div>
+      {nanobot && Object.keys(nanobot).length > 0 && (
+        <div className="nanoDetails">
           <h2>Nanobot Details</h2>
           <p><strong>ID:</strong> {nanobot.id}</p>
           <p><strong>Name:</strong> {nanobot.name}</p>

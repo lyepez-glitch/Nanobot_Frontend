@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function SimulationForm({ onSubmit, simulationResults, userId,setSimulationResults,setNanobots,nanobots }) {
+
     const [nanobotType, setNanobotType] = useState('repair');
     const [targetCancer, setTargetCancer] = useState(false);
     const [repairDamaged, setRepairDamaged] = useState(false);
@@ -27,7 +28,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
             // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
             const backendUrl = 'https://nanobot-backend.onrender.com/';
             try {
-                const response = await fetch(`${backendUrl}/nanobots`);
+                const response = await fetch(`${backendUrl}nanobots`);
                 const data = await response.json();
                 console.log('Fetched nanobots:', data);
                 setNanobots(data);
@@ -72,7 +73,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
             setSimulationResults(simNanoData.results);
             // setSuccess(data.message);
             // Fetch selected nanobot details
-            const response = await fetch(`${backendUrl}/nanobots/${nanobotId}`);
+            const response = await fetch(`${backendUrl}nanobots/${nanobotId}`);
             if (!response.ok) {
                 throw new Error('Nanobot not found');
             }
@@ -131,7 +132,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
                         <option value="" disabled>
                             Select a type
                         </option>
-                        {nanobots.map((bot) => (
+                        {nanobots && nanobots.map((bot) => (
                             <option key={bot.id} value={bot.id}>
                                 {bot.name}
                             </option>

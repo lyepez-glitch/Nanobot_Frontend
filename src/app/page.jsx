@@ -26,6 +26,7 @@ export default function Home() {
     const [timeLeft, setTimeLeft] = useState(30);
     const [userId,setUserId] = useState(null)
     const [nanobots, setNanobots] = useState([]);
+    const [sims, setSims] = useState([]);
     const [isSignedUp, setSignUp] = useState(false);
     const [isLoggedIn, setLoggedIn] = useState(false);
 
@@ -77,20 +78,23 @@ export default function Home() {
 
     return (
         <>
-        {
+        <Main nanobots={nanobots} setNanobots={setNanobots} setSimulationResults={setSimulationResults}userId={userId} simulationResults={simulationResults} onSubmit={handleSimulationParams} setNanobots={setNanobots} setSims={setSims}/>
+        {/* {
                 isSignedUp?(
                 <>
                   {
                     isLoggedIn?(
                         <>
                         <Main/>
-                        {/* <UserLookupForm/>
+                        {
+
+                        <UserLookupForm/>
                         <NanobotForm setNanobots={setNanobots}/>
                         <NanobotSearchForm/>
                         <SimulationForm nanobots={nanobots} setNanobots={setNanobots} setSimulationResults={setSimulationResults}userId={userId} simulationResults={simulationResults} onSubmit={handleSimulationParams} />
                         <SearchSimulation/>
                         <UpdateSimulationForm/>
-                        <DeleteSimulationForm/> */}
+                        <DeleteSimulationForm/>}
                         </>
                     ):(
                         <Login setSignUp={setSignUp} setLoggedIn={setLoggedIn}/>
@@ -104,7 +108,7 @@ export default function Home() {
                 </>
             )
 
-        }
+        } */}
         </>
         // <div className="max-w-screen-lg mx-auto text-center">
         //     {/* if not logged in and not signed up go to signup page
