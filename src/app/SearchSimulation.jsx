@@ -1,9 +1,16 @@
 import { useState } from "react";
 
-export default function SearchSimulation() {
+export default function SearchSimulation({setDeleteSim,setEditSim}) {
   const [simulationId, setSimulationId] = useState("");
   const [simulationData, setSimulationData] = useState(null);
   const [error, setError] = useState("");
+
+  const handleDeleteSimClick=(e)=>{
+    setDeleteSim(true);
+  }
+  const handleEditSimClick=(e)=>{
+    setEditSim(true);
+  }
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -55,16 +62,20 @@ export default function SearchSimulation() {
 
       {error && <p className="searchSimErr text-red-500 text-sm">{error}</p>}
 
-      {simulationData && (
-        <div className="mt-4">
+      <div className="simDetails">{simulationData && (
+        <div className="simDetailsContainer mt-4">
           <h4 className="text-md font-semibold">Simulation Details</h4>
           <p><strong>ID:</strong> {simulationData.id}</p>
           <p><strong>Name:</strong> {simulationData.simulationName}</p>
           <p><strong>Status:</strong> {simulationData.status}</p>
           <p><strong>Start Time:</strong> {new Date(simulationData.startTime).toLocaleString()}</p>
           <p><strong>User ID:</strong> {simulationData.userId}</p>
+          <button onClick = {(e)=>handleEditSimClick(e)} className="editSimBtn">Edit</button>
+          <button onClick = {(e)=>handleDeleteSimClick(e)} className="deleteSimBtn">Delete</button>
         </div>
+
       )}
+      </div>
     </div>
   );
 }

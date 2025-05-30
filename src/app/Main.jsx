@@ -3,9 +3,11 @@ import { useState,useEffect } from 'react';
 import UserLookupForm from './UserLookupForm';
 import NanobotForm from './NanobotForm';
 import SimulationForm from './SimulationForm';
+import DeleteSimulation from './DeleteSimulation';
 import Nanobots from './Nanobots';
 import SearchSimulation from './SearchSimulation';
 import Simulations from './Simulations';
+import UpdateSimulationForm from './UpdateSimulationForm';
 
 const Main = ({setNanobots,setSims,nanobots,setSimulationResults,userId,simulationResults,onSubmit}) => {
   const [userPage, setUserPage] = useState(false);
@@ -13,17 +15,24 @@ const Main = ({setNanobots,setSims,nanobots,setSimulationResults,userId,simulati
   const [simPage, setSimPage] = useState(false);
   const [addNano, setAddNano] = useState(false);
   const [addSim, setAddSim] = useState(false);
+  const [editSim,setEditSim] = useState(false);
+  const [deleteSim,setDeleteSim] = useState(false);
+
   const handleUserClick = (e)=>{
     console.log('clicked');
     setUserPage(true);
     setNanobotPage(false);
     setSimPage(false);
+    setEditSim(false);
+    setDeleteSim(false);
   }
   const handleNanobotClick = (e)=>{
     console.log('clicked');
     setNanobotPage(true);
     setUserPage(false);
     setSimPage(false);
+    setEditSim(false);
+    setDeleteSim(false);
   }
 
   const handleSimClick = (e)=>{
@@ -31,6 +40,8 @@ const Main = ({setNanobots,setSims,nanobots,setSimulationResults,userId,simulati
     setNanobotPage(false);
     setUserPage(false);
     setSimPage(true);
+    setEditSim(false);
+    setDeleteSim(false);
   }
 
   return (
@@ -88,13 +99,25 @@ const Main = ({setNanobots,setSims,nanobots,setSimulationResults,userId,simulati
             addSim?(
 
               <SimulationForm nanobots={nanobots} setNanobots={setNanobots} setSimulationResults={setSimulationResults}userId={userId} simulationResults={simulationResults} onSubmit={onSubmit} setSims={setSims}/>
+            ):editSim?(
+              <UpdateSimulationForm/>
+            ):deleteSim?(
+              <DeleteSimulation/>
             ):(
-              <Simulations setAddSim={setAddSim}/>
+              <Simulations setDeleteSim={setDeleteSim} setEditSim={setEditSim} setAddSim={setAddSim}/>
             )
+
+
+
+
         ):(
           <></>
         )
         }
+
+
+
+
       </div>
 
     </div>

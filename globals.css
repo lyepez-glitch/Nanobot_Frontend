@@ -532,3 +532,221 @@ main {
     width: 160px;
     height: 50px;
 }
+
+.simForm {
+    width: 100vw;
+    /* margin: 0; */
+    /* margin: 0; */
+    /* flex-basis: 100%; */
+    width: 50%;
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    align-self: center;
+    margin-top: -20%;
+    margin-top: -10%;
+    background-color: #fff;
+    width: 30%;
+    height: 60%;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+}
+
+.simForm h3 {
+    font-size: 30px;
+}
+
+.selectNanoType {
+    flex-basis: 100%;
+    /* text-align: center; */
+    width: 600px;
+    /* border: 1px solid #000; */
+    border-radius: 15;
+    /* border-radius: 15px; */
+    /* height: 40px; */
+    /* display: flex
+; */
+    /* align-items: flex-end; */
+}
+
+.targetingCriteria {
+    flex-basis: 100%;
+}
+
+.targetingCriteria>label {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.targetingCriteria>div {
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.selectNanoType>label {
+    font-size: 15px;
+}
+
+.selectNanoType>select {
+    border: 1px solid #ccc;
+    border-radius: 0;
+    color: #333;
+}
+
+.successSimForm {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.simDetails {
+    flex-basis: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.simDetailsContainer {
+    border: 1px solid black;
+    padding: 10px;
+    /* font-weight: 700; */
+    /* font-size: 25px; */
+    width: 25%;
+}
+
+.simDetailsContainer>h4 {
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+}
+
+.simDetailsContainer p {
+    margin-left: 30px;
+    flex-basis: 100%;
+    text-align: left;
+}
+
+.editSimBtn {
+    border-radius: 6px;
+    background-color: #42b72a;
+    color: #fff;
+    /* padding: 15px; */
+    width: 50px;
+    height: 30px;
+    /* flex-basis: 100%; */
+    /* position: absolute; */
+    right: 5p;
+    margin-left: 80%;
+}
+
+.updateSimForm {
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    margin-top: -10%;
+    background-color: #fff;
+    width: 30%;
+    height: 60%;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+}
+
+.updateSimForm>h3 {
+    font-size: 30px;
+    flex-basis: 100%;
+    width: 600px;
+    text-align: center;
+}
+
+.editSimIdInput {
+    border: 1px solid #ccc;
+    border-radius: 0;
+    color: #333;
+    padding-left: 10px;
+}
+
+.selectNanoTypeEditSim {
+    border: 1px solid #ccc;
+    border-radius: 0;
+    color: #333;
+    padding-left: 5px;
+}
+
+.targetCriteriaLabelEditSim {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.deleteSimForm {
+    background-color: #fff;
+    width: 30%;
+    height: 30%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10%;
+}
+
+.deleteSimForm>h3 {
+    height: 40px;
+}
+
+.deleteSimInputDiv {
+    border-radius: 6px;
+    width: 90%;
+    /* height: 12%; */
+    /* padding-left: 10px; */
+    border: 1px solid #dddfe2;
+    /* margin-top: 0; */
+    flex-basis: 100%;
+    height: 40px;
+}
+
+.deleteSimForm>input {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    padding-left: 10px;
+}
+
+.deleteSimFormInput {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    padding-left: 10px;
+}
+
+.editSimBtn {
+    border-radius: 6px;
+    background-color: #42b72a;
+    color: #fff;
+    width: 50px;
+    height: 30px;
+    right: 5p;
+    margin-left: 70%;
+}
+
+.deleteSimBtn {
+    border-radius: 6px;
+    background-color: #42b72a;
+    color: #fff;
+    height: 30px;
+    right: 5p;
+    /* margin-left: 90%; */
+    margin-left: 5px;
+    /* padding: 5px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 70px;
+}

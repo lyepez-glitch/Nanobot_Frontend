@@ -58,7 +58,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
 
             // Send simulation request to backend
 
-            const simNanoResponse = await fetch(`${backendUrl}/simulate-nanobot`, {
+            const simNanoResponse = await fetch(`${backendUrl}simulate-nanobot`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,9 +89,10 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
                 nanobotId: data.id,
                 results: simNanoData.results,
             };
+            console.log('simPayload',simPayload);
 
             // Start the simulation
-            const simResponse = await fetch(`${backendUrl}/simulations`, {
+            const simResponse = await fetch(`${backendUrl}simulations`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -116,10 +117,10 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white shadow-md rounded-lg">
+            <form  onSubmit={handleSubmit} className="simForm space-y-4 p-4 bg-white shadow-md rounded-lg">
                 <h3 className="text-lg font-semibold">Simulation Parameters</h3>
 
-                <div>
+                <div className="selectNanoType">
                     <label htmlFor="nanobotType" className="block text-sm font-medium">
                         Select Nanobot Type:
                     </label>
@@ -140,7 +141,7 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
                     </select>
                 </div>
 
-                <div>
+                <div className="targetingCriteria">
                     <label className="block text-sm font-medium">Targeting Criteria:</label>
                     <div className="space-y-2">
                         <div>
@@ -176,8 +177,9 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
                 >
                     Start Simulation
                 </button>
+                {success && <p className="successSimForm text-green-500 mt-2">{success}</p>}
             </form>
-            {success && <p className="text-green-500 mt-2">{success}</p>}
+            {/* {success && <p className="text-green-500 mt-2">{success}</p>} */}
         </>
     );
 }

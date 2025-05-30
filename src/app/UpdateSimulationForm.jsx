@@ -43,7 +43,7 @@ export default function UpdateSimulationForm() {
       };
       console.log('updatePayload',updatePayload);
 
-      const response = await fetch(`${backendUrl}/simulations/${simulationId}`, {
+      const response = await fetch(`${backendUrl}simulations/${simulationId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -66,11 +66,11 @@ export default function UpdateSimulationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white shadow-md rounded-lg">
+    <form onSubmit={handleSubmit} className="updateSimForm space-y-4 p-4 bg-white shadow-md rounded-lg">
       <h3 className="text-lg font-semibold">Update Simulation</h3>
 
-      <div>
-        <label htmlFor="simulationId" className="block text-sm font-medium">
+      <div style={{flexBasis: '100%'}}>
+        <label style={{ fontSize: '15px'}}htmlFor="simulationId" className="block text-sm font-medium">
           Simulation ID:
         </label>
         <input
@@ -78,20 +78,20 @@ export default function UpdateSimulationForm() {
           id="simulationId"
           value={simulationId}
           onChange={(e) => setSimulationId(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300"
+          className="editSimIdInput mt-1 block w-full rounded-md border-gray-300"
           placeholder="Enter simulation ID"
         />
       </div>
 
-      <div>
-        <label htmlFor="nanobotType" className="block text-sm font-medium">
+      <div style={{flexBasis: '100%'}}>
+        <label style={{fontSize:'15px'}} htmlFor="nanobotType" className="block text-sm font-medium">
           Select Nanobot Type:
         </label>
         <select
           id="nanobotType"
           value={nanobotId}
           onChange={(e) => setNanobotId(e.target.value)}
-          className="mt-1 block w-full rounded-md border-gray-300"
+          className="selectNanoTypeEditSim mt-1 block w-full rounded-md border-gray-300"
         >
           <option value="" disabled>
             Select a type
@@ -104,9 +104,9 @@ export default function UpdateSimulationForm() {
         </select>
       </div>
 
-      <div>
-        <label className="block text-sm font-medium">Targeting Criteria:</label>
-        <div className="space-y-2">
+      <div style={{flexBasis:'100%'}}>
+        <label className="targetCriteriaLabelEditSim block text-sm font-medium">Targeting Criteria:</label>
+        <div style={{ border: '1px solid #ccc', paddingLeft: '10px'}} className="space-y-2">
           <div>
             <input
               type="checkbox"
@@ -130,8 +130,8 @@ export default function UpdateSimulationForm() {
         </div>
       </div>
 
-      {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
-      {successMessage && <p className="text-green-500 text-sm">{successMessage}</p>}
+      {errorMessage && <p style={{flexBasis: '100%',textAlign: 'center'}} className="text-red-500 text-sm">{errorMessage}</p>}
+      {successMessage && <p style={{ flexBasis: '100%',textAlign: 'center'}} className="text-green-500 text-sm">{successMessage}</p>}
 
       <button
         type="submit"

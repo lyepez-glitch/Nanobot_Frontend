@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import SearchSimulation from './SearchSimulation';
 
-const Simulations = ({setAddSim}) => {
+const Simulations = ({setDeleteSim,setEditSim,setAddSim}) => {
   // const [name, setName] = useState('');
 
 
@@ -15,7 +15,7 @@ const Simulations = ({setAddSim}) => {
   return (
     <div className = "simulationsContainer">
       <button onClick={(e)=>{handleAddSimClick(e)}} className= "createSimBtn" type="submit">Create Simulation</button>
-      <SearchSimulation/>
+      <SearchSimulation setDeleteSim={setDeleteSim} setEditSim={setEditSim}/>
 
     </div>
   );
