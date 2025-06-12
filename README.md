@@ -36,21 +36,19 @@ Hosting: Vercel (frontend), Render.com (backend)
 
 🧪 Getting Started (Frontend)
 1. Clone the repo
-bash
-Copy
-Edit
+
 git clone https://github.com/your-username/nanobot-frontend.git
+
 cd nanobot-frontend
+
 2. Install dependencies
-bash
-Copy
-Edit
+
 npm install
-3. Run the development server
-bash
-Copy
-Edit
+
+4. Run the development server
+
 npm run dev
+
 Now go to http://localhost:3000 in your browser.
 
 🔌 Backend Setup (Required)
@@ -63,32 +61,28 @@ You can use https://www.freesqldatabase.com or your local MySQL instance via MyS
 
 Example environment variables used:
 
-ini
-Copy
-Edit
 DB_HOST=sql3.freesqldatabase.com
 DB_USER=sql3758208
 DB_PASSWORD=yourpassword
 DB_NAME=sql3758208
 DB_PORT=3306
+
 2. Clone the backend repo
-bash
-Copy
-Edit
+
 git clone https://github.com/your-username/nanobot-backend.git
+
 cd nanobot-backend
+
 3. Install and run backend
-bash
-Copy
-Edit
+
 npm install
+
 npm start
+
 Backend should run on http://localhost:8081 (or update the frontend backendUrl accordingly).
 
 📁 Project Structure Highlights
-bash
-Copy
-Edit
+
 /app
   /components
     Login.jsx
@@ -100,6 +94,7 @@ Edit
 /globals.css
 /tailwind.config.js
 /package.json
+
 🧠 Notes
 Backend requests are sent to: https://nanobot-backend.onrender.com/ by default.
 
