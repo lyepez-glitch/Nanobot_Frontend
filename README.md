@@ -1,4 +1,5 @@
 🧠 Nanobot Simulation App
+
 This is a full-stack web application that allows users to:
 
 ✅ Sign up and log in
