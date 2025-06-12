@@ -1,38 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🧠 Nanobot Simulation App
+This is a full-stack web application that allows users to:
 
-## Getting Started
+✅ Sign up and log in
 
-First, run the development server:
+🤖 Create nanobots with various states
 
-```bash
+🧬 Create simulations using nanobots to target and repair cells
+
+🔍 Look up users, nanobots, and simulations by their IDs
+
+Built using Next.js 15, TailwindCSS, and connected to a backend (hosted separately) using MySQL and Express.js.
+
+🚀 Live Demo
+Frontend: https://nanobot-frontend.vercel.app
+
+🛠 You’ll need to run the backend server (see "Backend Setup") for full functionality.
+
+🖥 Features
+User registration & login
+
+Create, view, and manage nanobots
+
+Run simulations targeting cell states (e.g., cancerous, damaged)
+
+View simulations and nanobots by ID
+
+Sleek responsive UI powered by Tailwind CSS
+
+📦 Tech Stack
+Frontend: Next.js, React, TailwindCSS
+
+Backend: Node.js, Express, MySQL (hosted via FreeSQLDatabase.com)
+
+Hosting: Vercel (frontend), Render.com (backend)
+
+🧪 Getting Started (Frontend)
+1. Clone the repo
+bash
+Copy
+Edit
+git clone https://github.com/your-username/nanobot-frontend.git
+cd nanobot-frontend
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Run the development server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Now go to http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔌 Backend Setup (Required)
+The backend is responsible for authentication, nanobot and simulation storage.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+If you want to run the full app locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a MySQL database
+You can use https://www.freesqldatabase.com or your local MySQL instance via MySQL Workbench.
 
-## Learn More
+Example environment variables used:
 
-To learn more about Next.js, take a look at the following resources:
+ini
+Copy
+Edit
+DB_HOST=sql3.freesqldatabase.com
+DB_USER=sql3758208
+DB_PASSWORD=yourpassword
+DB_NAME=sql3758208
+DB_PORT=3306
+2. Clone the backend repo
+bash
+Copy
+Edit
+git clone https://github.com/your-username/nanobot-backend.git
+cd nanobot-backend
+3. Install and run backend
+bash
+Copy
+Edit
+npm install
+npm start
+Backend should run on http://localhost:8081 (or update the frontend backendUrl accordingly).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📁 Project Structure Highlights
+bash
+Copy
+Edit
+/app
+  /components
+    Login.jsx
+    UserForm.jsx
+    SimulationForm.jsx
+    NanobotForm.jsx
+    ...
+  page.jsx  # Main app logic
+/globals.css
+/tailwind.config.js
+/package.json
+🧠 Notes
+Backend requests are sent to: https://nanobot-backend.onrender.com/ by default.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If testing locally, make sure CORS is enabled on your backend.
 
-## Deploy on Vercel
+You can edit the main logic in app/page.jsx and corresponding forms in /components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🛠 Future Improvements
+Add user dashboards and better result visualizations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Implement filtering and editing of simulations
 
-vercel url - https://nanobot-frontend.vercel.app/
+Add auth token support (JWT)
+
+📄 License
+MIT
