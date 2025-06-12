@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function UpdateSimulationForm() {
+export default function UpdateSimulationForm({success,setSuccess,setIsValid,setEditSim,handleSubmit}) {
   const [simulationId, setSimulationId] = useState('');
   const [nanobotId, setNanobotId] = useState('');
   const [targetCancer, setTargetCancer] = useState(false);
@@ -26,9 +26,9 @@ export default function UpdateSimulationForm() {
     fetchNanobotTypes();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleUpdateSubmit = async (e) => {
     e.preventDefault();
-
+    handleSubmit();
     if (!simulationId || !nanobotId) {
       setErrorMessage('Please enter a simulation ID and select a nanobot type.');
       return;
@@ -66,7 +66,8 @@ export default function UpdateSimulationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="updateSimForm space-y-4 p-4 bg-white shadow-md rounded-lg">
+    <form onSubmit={handleUpdateSubmit} className="updateSimForm space-y-4 p-4 bg-white shadow-md rounded-lg">
+      <button className="nanoFormBackBtn" onClick={()=>setEditSim(false)}>Back</button>
       <h3 className="text-lg font-semibold">Update Simulation</h3>
 
       <div style={{flexBasis: '100%'}}>
@@ -135,7 +136,7 @@ export default function UpdateSimulationForm() {
 
       <button
         type="submit"
-        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        className="updateSubmitBtn mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
       >
         Update Simulation
       </button>

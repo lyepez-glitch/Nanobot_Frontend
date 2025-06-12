@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-const NanobotForm = ({setNanobots}) => {
+const NanobotForm = ({setNanobots,setAddNano}) => {
   const [name, setName] = useState('');
   const [userId, setUserId] = useState('');
   const [status, setStatus] = useState('');
@@ -67,9 +67,9 @@ const NanobotForm = ({setNanobots}) => {
 
   return (
     <div className="nanobotContainer">
-      <h1>Create Nanobot</h1>
+      <h1 style={{display:'none'}}>Create Nanobot</h1>
       <form className ="nanoForm" onSubmit={handleSubmit}>
-
+        <button className="nanoFormBackBtn" onClick={()=>setAddNano(false)}>Back</button>
 
             <input
               placeholder="Name"

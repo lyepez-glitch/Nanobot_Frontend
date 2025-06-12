@@ -28,11 +28,12 @@ const UserForm = ({setUserId,setSignUp}) => {
       });
 
       const data = await res.json();
-      console.log('user data',data);
+      console.log('user data',data,res.status.toString(),typeof res.status);
 
-      if (res.status === 201) {
+      if (res.status === 201 || res.status.toString().includes('201')) {
         setSuccessMessage('User created successfully!');
         setUsername('');
+        console.log('user id',data.id);
         setUserId(data.id);
         setEmail('');
         setPassword('');

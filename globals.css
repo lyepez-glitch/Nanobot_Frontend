@@ -1,132 +1,133 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+         :root {
+            --background: #ffffff;
+            --foreground: #171717;
+        }
 
-@media (prefers-color-scheme: dark) {
-     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-}
+        @media (prefers-color-scheme: dark) {
+             :root {
+                --background: #0a0a0a;
+                --foreground: #ededed;
+            }
+        }
 
-body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
-}
+        body {
+            color: var(--foreground);
+            background: var(--background);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* globals.css */
 
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
 
-/* globals.css */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
-.cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-}
+        input[type="checkbox"],
+        select {
+            margin-top: 0.5rem;
+        }
 
-form {
-    max-width: 400px;
-    margin: 0 auto;
-}
+        .cell {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
 
-input[type="checkbox"],
-select {
-    margin-top: 0.5rem;
-}
+        .email,
+        .username,
+        .password {
+            border-radius: 6px;
+            border: 1px solid rgba(84, 72, 49, 0.15);
+            display: block;
+            margin-top: 5px;
+            height: 35px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
-.cell {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 8px;
-}
+        #signUpBtn {
+            background: rgb(35, 131, 226);
+            color: #fff;
+            border-radius: 4px;
+            box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset, rgba(15, 15, 15, 0.1) 0px 1px;
+            width: 100%;
+            margin-top: 30px;
+            height: 36px;
+        }
 
-.email,
-.username,
-.password {
-    border-radius: 6px;
-    border: 1px solid rgba(84, 72, 49, 0.15);
-    display: block;
-    margin-top: 5px;
-    height: 35px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
+        .deleteSimBtn {
+            height: 40px;
+            width: 45%;
+        }
 
-#signUpBtn {
-    background: rgb(35, 131, 226);
-    color: #fff;
-    border-radius: 4px;
-    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset, rgba(15, 15, 15, 0.1) 0px 1px;
-    width: 100%;
-    margin-top: 30px;
-    height: 36px;
-}
+        #signUpBtn:hover {
+            background: rgb(0, 119, 212);
+            /* background: red; */
+        }
 
-#signUpBtn:hover {
-    background: rgb(0, 119, 212);
-    /* background: red; */
-}
+        #signUpForm div,
+        #signUpForm input {
+            width: 100%;
+        }
 
-#signUpForm div,
-#signUpForm input {
-    width: 100%;
-}
+        #signUpForm {
+            max-width: 320px;
+            height: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-self: flex-start;
+        }
 
-#signUpForm {
-    max-width: 320px;
-    height: 70%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-self: flex-start;
-}
+        label[for="username"],
+        label[for="email"],
+        label[for="password"] {
+            color: rgb(115, 114, 110);
+        }
 
-label[for="username"],
-label[for="email"],
-label[for="password"] {
-    color: rgb(115, 114, 110);
-}
+        #signupHeader {
+            font-weight: 600;
+            font-size: 23px;
+            letter-spacing: -0.264px;
+            line-height: 26px;
+            margin: 0px;
+            color: rgba(70, 68, 64, 0.45);
+            margin-bottom: 20px;
+        }
 
-#signupHeader {
-    font-weight: 600;
-    font-size: 23px;
-    letter-spacing: -0.264px;
-    line-height: 26px;
-    margin: 0px;
-    color: rgba(70, 68, 64, 0.45);
-    margin-bottom: 20px;
-}
+        main {
+            justify-content: center;
+            /* align-items: center !important; */
+            align-items: center;
+            display: flex;
+        }
 
-main {
-    justify-content: center;
-    /* align-items: center !important; */
-    align-items: center;
-    display: flex;
-}
+        #signUpContainer {
+            height: 70vh;
+            display: flex;
+            align-items: center;
+        }
 
-#signUpContainer {
-    height: 70vh;
-    display: flex;
-    align-items: center;
-}
-
-.inputClick {
-    box-shadow: #2383e291 0px 0px 0px 1px inset;
-    border-color: lightblue;
-}
-
-
-/* #loginContainer {
+        .inputClick {
+            box-shadow: #2383e291 0px 0px 0px 1px inset;
+            border-color: lightblue;
+        }
+        /* #loginContainer {
     border-radius: 8px;
     padding: 10px;
     height: 32vh;
@@ -134,261 +135,260 @@ main {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, .1), 0px 8px 16px rgba(0, 0, 0, .1)
 } */
 
-#loginContainer {
-    border-radius: 8px;
-    padding: 10px;
-    height: 32vh;
-    width: 20vw;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0;
-    padding: 20px 20px;
-    height: 35vh;
-    height: 40vh;
-}
+        #loginContainer {
+            border-radius: 8px;
+            padding: 10px;
+            height: 32vh;
+            width: 20vw;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 0;
+            padding: 20px 20px;
+            height: 35vh;
+            height: 40vh;
+        }
 
-#loginWrapper {
-    height: 35vh;
-    width: 20vw;
-    margin-top: -20%;
-    /* transform: scale(1.2); */
-}
+        #loginWrapper {
+            height: 35vh;
+            width: 20vw;
+            margin-top: -20%;
+            /* transform: scale(1.2); */
+        }
 
-.max-w-md {
-    max-width: 100rem;
-}
+        .max-w-md {
+            max-width: 100rem;
+        }
 
-#loginContainer>form {
-    max-width: 1000px;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
+        #loginContainer>form {
+            max-width: 1000px;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-.loginInputDiv {
-    flex-basis: 100%;
-}
+        .loginInputDiv {
+            flex-basis: 100%;
+        }
 
-.error,
-.success {
-    flex-basis: 100%;
-    margin-top: 5px;
-    margin-bottom: -10px;
-}
+        .error,
+        .success {
+            flex-basis: 100%;
+            margin-top: 5px;
+            margin-bottom: -10px;
+        }
 
-.divideContainer {
-    flex-basis: 100%;
-    display: flex;
-    height: 20px;
-    gap: 30px;
-}
+        .divideContainer {
+            flex-basis: 100%;
+            display: flex;
+            height: 20px;
+            gap: 30px;
+        }
 
-.divider {
-    border-bottom: 1px solid #ccc;
-    width: 50%;
-}
+        .divider {
+            border-bottom: 1px solid #ccc;
+            width: 50%;
+        }
 
-.or {
-    margin-top: 5px;
-    position: absolute;
-    left: 48.7%;
-    bottom: 48.5%
-}
+        .or {
+            margin-top: 5px;
+            /* position: absolute; */
+            left: 48.7%;
+            bottom: 48.5%
+        }
 
-.erroror {
-    margin-top: 0;
-    position: absolute;
-    left: 48.7%;
-    bottom: 46.5%;
-}
+        .erroror {
+            margin-top: 0;
+            position: absolute;
+            left: 48.7%;
+            bottom: 46.5%;
+        }
 
-.successor {
-    margin-top: 0;
-    position: absolute;
-    left: 48.7%;
-    bottom: 46.5%;
-}
+        .successor {
+            margin-top: 0;
+            position: absolute;
+            left: 48.7%;
+            bottom: 46.5%;
+        }
 
-.aside {
-    height: 100%;
-    width: 100%;
-    background-color: blue;
-    background-color: #343a40;
-}
+        .aside {
+            height: 100%;
+            width: 100%;
+            background-color: blue;
+            background-color: #343a40;
+        }
 
-.asideContainer {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    width: 12%;
-}
+        .asideContainer {
+            position: fixed;
+            left: 0;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            width: 12%;
+        }
 
-.userLookup {
-    width: 600px;
-    border: 1px solid black;
-    border-radius: 15;
-    border-radius: 15px;
-    height: 40px;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-}
+        .userLookup {
+            width: 600px;
+            border: 1px solid black;
+            border-radius: 15;
+            border-radius: 15px;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
 
-.lookupForm {
-    max-width: 1000px;
-    margin: 0;
-    width: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    flex-basis: 100%;
-}
+        .lookupForm {
+            max-width: 1000px;
+            margin: 0;
+            width: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            flex-basis: 100%;
+        }
 
-.lookupInput {
-    /* text-align: center; */
-    flex-basis: 80%;
-    /* margin-left: 15px; */
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    text-align: center;
-}
+        .lookupInput {
+            /* text-align: center; */
+            flex-basis: 80%;
+            /* margin-left: 15px; */
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            text-align: center;
+        }
 
-.lookupBtn {
-    flex-basis: 20%;
-    background-color: lightgray;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
+        .lookupBtn {
+            flex-basis: 20%;
+            background-color: lightgray;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
 
-.mainContainer {
-    /* margin-top: -20%; */
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-}
+        .mainContainer {
+            /* margin-top: -20%; */
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
 
-.lookupErr {
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: 5px;
-}
+        .lookupErr {
+            flex-basis: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
 
-.userDetailsHeader {
-    font-weight: bold;
-    font-size: 25px;
-}
+        .userDetailsHeader {
+            font-weight: bold;
+            font-size: 25px;
+        }
 
-.userUsername,
-.userEmail {
-    color: #65686C;
-    font-size: small;
-}
+        .userUsername,
+        .userEmail {
+            color: #65686C;
+            font-size: small;
+        }
 
-.margin-left {
-    margin-left: 30px;
-    flex-basis: 100%;
-    /* text-align: center; */
-}
+        .margin-left {
+            margin-left: 30px;
+            flex-basis: 100%;
+            /* text-align: center; */
+        }
 
-.userDetailsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: 1px solid black;
-    margin-top: 20px;
-    padding: 20px 20px;
-}
+        .userDetailsContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border: 1px solid black;
+            margin-top: 20px;
+            padding: 20px 20px;
+        }
 
-.mainContent {
-    /* margin-top: -20%; */
-    /* background-color: #fff; */
-    /* padding: 100px; */
-    width: 100%;
-    height: 100%;
-    /* margin-top: 15%; */
-    /* align-items: center; */
-    display: flex;
-    justify-content: center;
-}
+        .mainContent {
+            /* margin-top: -20%; */
+            /* background-color: #fff; */
+            /* padding: 100px; */
+            width: 100%;
+            height: 100%;
+            /* margin-top: 15%; */
+            /* align-items: center; */
+            display: flex;
+            justify-content: center;
+        }
 
-.userBtn {
-    height: 40px;
-    text-align: center;
-    color: #c2c7d0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .userBtn {
+            height: 40px;
+            text-align: center;
+            color: #c2c7d0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-#main {
-    max-width: 100vw;
-    background: #f2f4f7;
-}
+        #main {
+            max-width: 100vw;
+            background: #f2f4f7;
+        }
 
-.nanobotContainer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
+        .nanobotContainer {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
 
-.nanoForm {
-    margin-top: -10%;
-    background-color: #fff;
-    width: 30%;
-    height: 60%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
-}
+        .nanoForm {
+            margin-top: -10%;
+            background-color: #fff;
+            width: 30%;
+            height: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            padding: 10px;
+        }
 
-.nanoForm input {
-    border: 1px solid gray;
-    border-radius: 6px;
-    width: 90%;
-    height: 12%;
-    padding-left: 20px;
-    border: 1px solid #dddfe2;
-}
+        .nanoForm input {
+            border: 1px solid gray;
+            border-radius: 6px;
+            width: 90%;
+            height: 12%;
+            padding-left: 20px;
+            border: 1px solid #dddfe2;
+        }
 
-.nanoForm button,
-.createNanoBtn,
-.createSimBtn {
-    background-color: #42b72a;
-    color: #fff;
-    border-radius: 6px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #42b72a;
-    color: #fff;
-    padding: 15px;
-}
+        .nanoForm button,
+        .createNanoBtn,
+        .createSimBtn {
+            background-color: #42b72a;
+            color: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: #42b72a;
+            color: #fff;
+            padding: 15px;
+        }
 
-.nanoFormErr {
-    color: red;
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: -20px;
-}
+        .nanoFormErr {
+            color: red;
+            flex-basis: 100%;
+            text-align: center;
+            margin-top: -20px;
+        }
 
-.nanoFormSuccess {
-    color: green;
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: -20px;
-}
-
-
-/* .nanoSearchContainer {
+        .nanoFormSuccess {
+            color: green;
+            flex-basis: 100%;
+            text-align: center;
+            margin-top: -20px;
+        }
+        /* .nanoSearchContainer {
     width: 700p;
     border: 1px solid #000;
     border-radius: 15;
@@ -399,63 +399,1090 @@ main {
     flex-wrap: wrap;
 } */
 
-.nanoSearchContainer {
-    width: 500px;
-    margin-top: 40%;
-}
+        .nanoSearchContainer {
+            width: 500px;
+            margin-top: 40%;
+        }
 
-.nanoSearchForm {
-    max-width: 1000px;
-    margin: 0;
-    width: 100%;
+        .nanoSearchForm {
+            max-width: 1000px;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            border: 1px solid #000;
+            border-radius: 15px;
+        }
+
+        .nanoSearchForm>div {
+            flex-basis: 80%;
+        }
+
+        .nanoSearchForm input {
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            width: 100%;
+            padding-left: 20px;
+            height: 40px;
+            padding-right: 5px;
+            /* margin-left: 5px; */
+        }
+
+        .nanoSearchBtn {
+            flex-basis: 20%;
+            background-color: #d3d3d3;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .nanoDetails {
+            text-align: center;
+            margin-top: 15px;
+            text-align: center;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            border: 1px solid #000;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .nanoDetails h2 {
+            font-weight: 700;
+            font-size: 25px;
+        }
+
+        .nanoDetails p {
+            margin-left: 30px;
+            flex-basis: 100%;
+            text-align: left;
+        }
+
+        .searchSimContainer {
+            width: 30%;
+            height: 15%;
+            flex-basis: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: -10%;
+        }
+
+        .searchSimContainer h3 {
+            margin-left: 7px;
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        .searchSimForm {
+            max-width: 1000px;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 30%;
+            border: 1px solid #000;
+            border-radius: 15px;
+            margin-top: 0;
+            width: 25%;
+        }
+
+        .searchSimInputDiv {
+            flex-basis: 80%;
+            height: 100%;
+        }
+
+        .searchSimForm input {
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            width: 100%;
+            padding-left: 20px;
+            height: 100%;
+            padding-right: 5px;
+            margin-top: 0;
+        }
+
+        .searchSimForm button {
+            flex-basis: 20%;
+            background-color: #d3d3d3;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            margin-top: 0 !important;
+            color: #000000;
+            padding: 0;
+        }
+
+        .searchSimErr {
+            text-align: center;
+            flex-basis: 100%;
+        }
+
+        .simulationsContainer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .simulationsContainer button {}
+
+        .createSimBtn {
+            /* width: 10%;
+    height: 10%; */
+            width: 160px;
+            height: 50px;
+        }
+
+        .simForm {
+            width: 100vw;
+            /* margin: 0; */
+            /* margin: 0; */
+            /* flex-basis: 100%; */
+            width: 50%;
+            max-width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+            align-self: center;
+            margin-top: -20%;
+            margin-top: -10%;
+            background-color: #fff;
+            width: 30%;
+            height: 60%;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+        }
+
+        .simForm h3 {
+            font-size: 30px;
+        }
+
+        .selectNanoType {
+            flex-basis: 100%;
+            /* text-align: center; */
+            width: 600px;
+            /* border: 1px solid #000; */
+            border-radius: 15;
+            /* border-radius: 15px; */
+            /* height: 40px; */
+            /* display: flex
+; */
+            /* align-items: flex-end; */
+        }
+
+        .targetingCriteria {
+            flex-basis: 100%;
+        }
+
+        .targetingCriteria>label {
+            font-size: 15px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .targetingCriteria>div {
+            border: 1px solid #ccc;
+            padding-left: 10px;
+        }
+
+        .selectNanoType>label {
+            font-size: 15px;
+        }
+
+        .selectNanoType>select {
+            border: 1px solid #ccc;
+            border-radius: 0;
+            color: #333;
+        }
+
+        .successSimForm {
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        .simDetails {
+            flex-basis: 100%;
+            justify-content: center;
+            display: flex;
+        }
+
+        .simDetailsContainer {
+            border: 1px solid black;
+            padding: 10px;
+            /* font-weight: 700; */
+            /* font-size: 25px; */
+            width: 25%;
+        }
+
+        .simDetailsContainer>h4 {
+            font-weight: 700;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .simDetailsContainer p {
+            margin-left: 30px;
+            flex-basis: 100%;
+            text-align: left;
+        }
+
+        .editSimBtn {
+            border-radius: 6px;
+            background-color: #42b72a;
+            color: #fff;
+            /* padding: 15px; */
+            width: 50px;
+            height: 30px;
+            /* flex-basis: 100%; */
+            /* position: absolute; */
+            right: 5p;
+            margin-left: 80%;
+        }
+
+        .updateSimForm {
+            max-width: 100vw;
+            display: flex;
+            align-items: center;
+            align-self: center;
+            margin-top: -10%;
+            background-color: #fff;
+            width: 30%;
+            height: 60%;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+        }
+
+        .updateSimForm>h3 {
+            font-size: 30px;
+            flex-basis: 100%;
+            width: 600px;
+            text-align: center;
+        }
+
+        .editSimIdInput {
+            border: 1px solid #ccc;
+            border-radius: 0;
+            color: #333;
+            padding-left: 10px;
+        }
+
+        .selectNanoTypeEditSim {
+            border: 1px solid #ccc;
+            border-radius: 0;
+            color: #333;
+            padding-left: 5px;
+        }
+
+        .targetCriteriaLabelEditSim {
+            font-size: 15px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .deleteSimForm {
+            background-color: #fff;
+            width: 30%;
+            height: 30%;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10%;
+        }
+
+        .deleteSimForm>h3 {
+            height: 40px;
+        }
+
+        .deleteSimInputDiv {
+            border-radius: 6px;
+            width: 90%;
+            /* height: 12%; */
+            /* padding-left: 10px; */
+            border: 1px solid #dddfe2;
+            /* margin-top: 0; */
+            flex-basis: 100%;
+            height: 40px;
+        }
+
+        .deleteSimForm>input {
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+            padding-left: 10px;
+        }
+
+        .deleteSimFormInput {
+            width: 100%;
+            height: 100%;
+            margin-top: 0;
+            padding-left: 10px;
+        }
+
+        .editSimBtn {
+            border-radius: 6px;
+            background-color: #42b72a;
+            color: #fff;
+            width: 50px;
+            height: 30px;
+            right: 5p;
+            margin-left: 70%;
+        }
+
+        .deleteSimBtn {
+            border-radius: 6px;
+            background-color: #42b72a;
+            color: #fff;
+            height: 30px;
+            right: 5p;
+            /* margin-left: 90%; */
+            margin-left: 5px;
+            /* padding: 5px; */
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 70px;
+        }
+
+        .nanoFormBackBtn {
+            padding: 0 !important;
+            width: 100px;
+            height: 40px;
+            margin-right: 65%;
+            border-radius: 6px;
+            background-color: #42b72a;
+            color: #fff;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+        }
+
+        .startSimBtn {
+            margin-top: 5px;
+            margin-left: 40px;
+        }
+
+        .simResultsContainer {
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .slider {
+            justify-content: center;
+            margin-left: 40px;
+            margin-top: 5px !important;
+        }
+
+        .timeLeftContainer {
+            /* align-self: center; */
+            margin-left: 45%;
+            margin-top: 10%;
+            /* border: 1px solid black; */
+            border-radius: 6px;
+            box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px inset, rgba(15, 15, 15, 0.1) 0px 1px;
+            box-shadow: #2383e291 0px 0px 0px 1px inset;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            height: 50%;
+            width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+            z-index: 1;
+            background-color: #fff;
+        }
+
+        .timeLeftContainer p {
+            text-align: center;
+        }
+
+        .cellStateContainer {
+            width: 30%;
+            margin-top: 0;
+        }
+
+        .timeLeft {
+            margin-left: 10px;
+            flex-basis: 100%;
+        }
+
+        .secondsLabel {
+            margin-left: 35px;
+        }
+
+        .backgroundEle {
+            position: absolute;
+            left: 48%;
+            background-color: black;
+            z-index: 0;
+            top: 35%;
+            width: 300px;
+            height: 450px;
+            border-radius: 15px;
+        }
+
+        @media(min-width:345px) and (max-width:425px) {
+            .asideContainer {
+                width: 30%;
+            }
+            .dashboardHeader {
+                font-size: 20px;
+                margin-left: 25%;
+            }
+            .mainContent {
+                width: 50%;
+            }
+            .mainContainer {
+                margin-top: 20%;
+                margin-left: 10px;
+            }
+            .userDetailsContainer {
+                width: 200px;
+                margin-left: 20px;
+            }
+            .margin-left {
+                font-size: 10px !important;
+            }
+            .userDetailsHeader {
+                font-size: 25px;
+            }
+            .userLookup {
+                border: none;
+                width: 70px;
+                margin-left: 5px;
+            }
+            .lookupInput {
+                border: 1px solid black;
+                width: 165px;
+            }
+            .lookupBtn {
+                border: 1px solid black;
+                border-left: none;
+                padding: 5px;
+            }
+            .userLookupContainer {
+                margin-left: 5px;
+            }
+            .nanoSearchContainer {
+                width: 100%;
+                margin-top: 40%;
+            }
+            .nanoSearchContainer>h1 {
+                margin-left: 7px;
+            }
+            .nanobotsWrapper {
+                width: 100%;
+                /* flex-wrap: wra; */
+                /* display: flex
+    ; */
+                padding-left: 100px;
+            }
+            .nanoSearchBtn {
+                flex-basis: 20%;
+                background-color: #d3d3d3;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                padding: 10px;
+            }
+            .mainContent {
+                width: 100%;
+            }
+            .nanoForm {
+                width: 80%;
+                padding: 10px;
+            }
+            .nanoForm,
+            .nanobotContainer {
+                align-items: flex-start;
+                margin-top: -25px;
+                padding: 10px;
+            }
+            .nanoFormSuccess {
+                margin-top: 10px;
+            }
+            /* .simulationsContainer {
+        margin-left: 25%;
+        height: 30%;
+        margin-top: -20%;
+        position: absolute;
+        top: 50%;
+    }
+    .searchSimForm {
+        width: 200px;
+        height: 40px;
+        align-self: flex-start;
+        width: 60%;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .searchSimInputDiv {
+        font-size: 10px;
+        width: 300px;
+    }
+    .searchSimForm button {
+        font-size: 10px;
+        margin-top: 40px;
+    }
+    .simForm {
+        align-self: flex-start;
+        margin-left: 32%;
+        width: 200px;
+        height: 80%;
+        margin-top: -50px;
+    }
+    .simDetailsContainer {
+        width: 50%;
+    }
+    .editSimBtn {
+        margin-left: 10%;
+        margin-top: 10px;
+    }
+    .updateSimForm {
+        margin-left: 30%;
+        width: 60%;
+        margin-right: 0;
+        margin-top: -100%;
+        height: 100%;
+    }
+    .deleteSimForm {
+        /* margin: 0; */
+            /* margin-top: -15%;
+        margin-right: 0;
+        margin-left: 35%;
+        width: 60%;
+        height: 55% */
+            /* } */
+            .deleteSimForm>p {
+                font-size: 10px;
+            }
+            .deleteSimForm button {
+                height: 10%;
+                width: 85%;
+                font-size: 10px;
+            }
+            .deleteSimInputDiv {
+                font-size: 12px;
+            }
+            .deleteSimForm h3 {
+                width: 100%;
+                font-size: 15px;
+            }
+        }
+
+        @media(min-width:400px) and (max-width:500px) {
+            .asideContainer {
+                width: 30%;
+            }
+            .dashboardHeader {
+                font-size: 15px;
+                margin-left: 25%;
+            }
+            .mainContent {
+                width: 50%;
+            }
+            .mainContainer {
+                margin-top: 20%;
+                margin-left: 10px;
+            }
+            .userDetailsContainer {
+                width: 200px;
+                margin-left: 20px;
+            }
+            .margin-left {
+                font-size: 10px !important;
+            }
+            .userDetailsHeader {
+                font-size: 25px;
+            }
+            .userLookup {
+                border: none;
+                width: 70px;
+                margin-left: 5px;
+            }
+            .lookupInput {
+                border: 1px solid black;
+                width: 165px;
+            }
+            .lookupBtn {
+                border: 1px solid black;
+                border-left: none;
+                padding: 5px;
+            }
+            .userLookupContainer {
+                margin-left: 5px;
+            }
+            .nanoSearchContainer {
+                width: 100%;
+                margin-top: 40%;
+            }
+            .nanoSearchContainer>h1 {
+                margin-left: 7px;
+            }
+            .nanobotsWrapper {
+                width: 100%;
+                /* flex-wrap: wra; */
+                /* display: flex
+    ; */
+                padding-left: 100px;
+            }
+            .nanoSearchBtn {
+                flex-basis: 20%;
+                background-color: #d3d3d3;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                padding: 10px;
+            }
+            .mainContent {
+                width: 100%;
+            }
+            .nanoForm {
+                width: 80%;
+                padding: 10px;
+                margin-left: 40px;
+            }
+            .nanoForm,
+            .nanobotContainer {
+                align-items: flex-start;
+                margin-top: -25px;
+            }
+            .nanoFormSuccess {
+                margin-top: 10px;
+            }
+            /* .simulationsContainer {
+        height: 40%;
+        position: absolute;
+        top: 50%;
+    }
+    .searchSimContainer {
+        margin-left: 20%;
+        margin-top: -30%;
+        position: absolute;
+        top: 10%;
+        width: 100%;
+    }
+    .searchSimForm {
+        height: 100%;
+        width: 70%;
+    }
+    .searchSimForm button {
+        padding: 5px;
+    }
+    .simDetailsContainer {
+        width: 70%;
+    }
+    .editSimBtn {
+        margin-left: 30% !important;
+    }
+    .updateSimForm {
+        margin-left: 30%;
+        width: 60%;
+        margin-right: 0;
+        margin-top: -30%;
+        height: 100%;
+    }
+    .deleteSimForm {
+        width: 50%;
+        height: 50%;
+        margin-top: 0;
+        position: absolute;
+        left: 40%;
+        top: 25%;
+    }
+    .deleteSimForm button {
+        width: 60%;
+        font-size: 10px;
+    }
+    .deleteSimForm p {
+        width: 100%;
+        font-size: 8px;
+    }
+    .simForm h3 {
+        font-size: 20px;
+    } */
+        }
+
+        @media(min-width:501px) and (max-width:800px) {
+            .asideContainer {
+                width: 30%;
+            }
+            .dashboardHeader {
+                font-size: 15px;
+                margin-left: 25%;
+            }
+            .mainContent {
+                width: 50%;
+            }
+            .mainContainer {
+                margin-top: 20%;
+                margin-left: 10px;
+            }
+            .userDetailsContainer {
+                width: 200px;
+                margin-left: 20px;
+            }
+            .margin-left {
+                font-size: 10px !important;
+            }
+            .userDetailsHeader {
+                font-size: 25px;
+            }
+            .userLookup {
+                border: none;
+                width: 70px;
+                margin-left: 5px;
+            }
+            .lookupInput {
+                border: 1px solid black;
+                width: 165px;
+            }
+            .lookupBtn {
+                border: 1px solid black;
+                border-left: none;
+                padding: 5px;
+            }
+            .userLookupContainer {
+                margin-left: 5px;
+            }
+            .nanoSearchContainer {
+                width: 100%;
+                margin-top: 40%;
+            }
+            .nanoSearchContainer>h1 {
+                margin-left: 7px;
+            }
+            .nanobotsWrapper {
+                width: 100%;
+                /* flex-wrap: wra; */
+                /* display: flex
+    ; */
+                padding-left: 100px;
+            }
+            .nanoSearchBtn {
+                flex-basis: 20%;
+                background-color: #d3d3d3;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                padding: 10px;
+            }
+            .mainContent {
+                width: 100%;
+            }
+            .nanoForm {
+                width: 80%;
+                padding: 10px;
+                margin-left: 40px;
+            }
+            .nanoForm,
+            .nanobotContainer {
+                align-items: flex-start;
+                margin-top: -25px;
+            }
+            .nanoFormSuccess {
+                margin-top: 10px;
+            }
+            /* .simulationsContainer {
+        height: 40%;
+        position: absolute;
+        top: 50%;
+    }
+    .searchSimContainer {
+        margin-left: 20%;
+        position: absolute;
+        top: 10%;
+        width: 100%;
+    }
+    .searchSimForm {
+        height: 100%;
+        width: 70%;
+    }
+    .searchSimForm button {
+        padding: 5px;
+    }
+    .simDetailsContainer {
+        width: 70%;
+    }
+    .editSimBtn {
+        margin-left: 30% !important;
+    }
+    .updateSimForm {
+        margin-left: 30%;
+        width: 60%;
+        margin-right: 0;
+        margin-top: -30%;
+        height: 100%;
+    }
+    .deleteSimForm {
+        width: 50%;
+        height: 50%;
+        margin-top: 0;
+        position: absolute;
+        left: 40%;
+        top: 25%;
+    }
+    .deleteSimForm button {
+        width: 60%;
+        font-size: 10px;
+    }
+    .deleteSimForm p {
+        width: 100%;
+        font-size: 8px;
+    }
+    .simForm h3 {
+        font-size: 20px;
+    } */
+        }
+
+        @media (min-width: 501px) and (max-width: 800px) {
+            .nanobotsWrapper {
+                padding-left: 40%;
+            }
+            .nanoForm,
+            .nanobotContainer {
+                margin-top: 100px;
+            }
+            .nanobotContainer {
+                margin-left: 200px;
+            }
+            /* .simForm h3 {
+        font-size: 20px;
+    } */
+        }
+
+        @media(min-width:400px) and (max-width:500px) {
+            .nanobotsWrapper {
+                padding-left: 200px;
+            }
+        }
+
+        @media(min-width:501px) and (max-width:569px) {
+            .nanobotsWrapper {
+                padding-left: 200px;
+            }
+        }
+
+        @media(min-width:501px) and (max-width:569px) {
+            .nanobotsWrapper {
+                padding-left: 200px;
+            }
+        }
+
+        @media(min-width:501px) and (max-width:800px) {
+            .nanobotsWrapper {
+                /* margin-top: -12%; */
+            }
+            .nanobotContainer {
+                margin-left: 15%;
+                flex-wrap: wrap;
+            }
+            .nanoForm {
+                margin-top: -15%;
+                margin-left: 12%;
+            }
+            .nanobotContainer>h1 {
+                margin-left: -20%;
+                margin-top: -20%;
+            }
+            .mainContainer {
+                margin-top: 0;
+            }
+        }
+
+        @media(min-width:501px) and (max-width:515px) {}
+
+        @media(min-width:801) and (max-width:1280px) {
+            .asideContainer {
+                width: 30%;
+            }
+            .dashboardHeader {
+                font-size: 15px;
+                margin-left: 25%;
+            }
+            .mainContent {
+                width: 50%;
+                transform: scale(1.2);
+                margin-left: 25%;
+            }
+            .mainContainer {
+                margin-top: 10%;
+                margin-left: 10px;
+            }
+            .userDetailsContainer {
+                width: 80vw;
+                /* margin-left: 20px; */
+                padding: 20px;
+            }
+            .margin-left {
+                font-size: 10px !important;
+            }
+            .userDetailsHeader {
+                font-size: 25px;
+            }
+            .userLookup {
+                border: none;
+                width: 100%;
+                margin-left: 5px;
+                width: 50vw;
+            }
+            .lookupInput {
+                border: 1px solid black;
+                width: 165px;
+            }
+            .lookupBtn {
+                border: 1px solid black;
+                border-left: none;
+                padding: 5px;
+            }
+            .userLookupContainer {
+                /* margin-left: 5px; */
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .main {
+                padding-right: 0;
+            }
+        }
+
+        @media(max-width:1440px) {
+            /* .simulationsContainer {
+        top: 20% !important;
+    } */
+            /* .searchSimContainer {
+        position: absolute;
+        top: 80%;
+        width: 100%;
+    }
+    .createSimBtn {
+        position: absolute;
+        top: 20%;
+    } */
+        }
+
+        @media(max-width:375px) {
+            /* .createSimBtn {
+        top: -50%;
+    } */
+        }
+        /**/
+
+        @media(max-width:375px) {
+            .nanoForm {
+                position: absolute;
+                top: 35%;
+                left: 40%;
+                width: 50%;
+            }
+        }
+
+        @media(min-width:400px) and (max-width:800px) {
+            .nanoForm {
+                position: absolute;
+                top: 10%;
+                left: 20%;
+                width: 50%;
+            }
+            /* .nanobotContainer {
+        top: 5px;
+        position: absolute;
+    } */
+        }
+
+        @media(max-width:2000px) {
+            .nanobotContainer {
+                top: 20px;
+                position: absolute;
+            }
+        }
+
+        @media(min-width:800px)and(max-width:1200px) {
+            .nanoForm {
+                padding: 10px;
+            }
+        }
+
+        @media(max-width:500px) {
+            .nanoForm {
+                top: 20%;
+                left: 30%;
+            }
+        }
+
+        @media(max-width:375px) {
+            /* .searchSimContainer {
+        top: 40%;
+    } */
+        }
+
+        @media(min-width:376px) and (max-width:425px) {
+            /* .searchSimContainer {
+        top: 40%;
+    }
+    .simulationsContainer {
+        position: absolute;
+        top: 80%;
+        margin-top: -40%;
+    } */
+        }
+
+        @media(min-width:426px)and(max-width:800px) {
+            /* .searchSimContainer {
+        top: 80%;
+        margin-top: 10px;
+    }
+    .simulationsContainer {
+        position: absolute;
+        top: 50%;
+        margin-top: -40%;
+    } */
+        }
+
+        body {
+            overflow: hidden;
+        }
+        /* .simulationsContainer {
     display: flex;
-    justify-content: space-between;
-    height: 100%;
-    border: 1px solid #000;
-    border-radius: 15px;
-}
-
-.nanoSearchForm>div {
-    flex-basis: 80%;
-}
-
-.nanoSearchForm input {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    width: 100%;
-    padding-left: 20px;
-    height: 40px;
-    padding-right: 5px;
-    /* margin-left: 5px; */
-}
-
-.nanoSearchBtn {
-    flex-basis: 20%;
-    background-color: #d3d3d3;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.nanoDetails {
-    text-align: center;
-    margin-top: 15px;
-    text-align: center;
-    margin-top: 15px;
     flex-wrap: wrap;
-    border: 1px solid #000;
-    margin-top: 20px;
-    padding: 20px;
+    justify-content: center;
+    flex: 1 1 100%;
 }
 
-.nanoDetails h2 {
-    font-weight: 700;
-    font-size: 25px;
+.simulationsContainer {
+    height: 250px;
+    width: 100%;
 }
 
-.nanoDetails p {
-    margin-left: 30px;
-    flex-basis: 100%;
-    text-align: left;
+.createSimBtn {
+    margin-left: 100px;
+    width: 160px;
+    height: 50px;
+}
+
+.mainContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContent {
+    width: 100%;
+    height: 100%;
+}
+
+.searchSimContainer {
+    margin-left: 100px;
 }
 
 .searchSimContainer {
@@ -470,283 +1497,1253 @@ main {
 
 .searchSimContainer h3 {
     margin-left: 7px;
-    flex-basis: 100%;
-    text-align: center;
 }
 
 .searchSimForm {
     max-width: 1000px;
-    margin: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     height: 30%;
     border: 1px solid #000;
     border-radius: 15px;
-    margin-top: 0;
-    width: 25%;
-}
-
-.searchSimInputDiv {
-    flex-basis: 80%;
-    height: 100%;
+    margin: 0;
+    width: 200px;
+    height: 40px;
 }
 
 .searchSimForm input {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    width: 100%;
-    padding-left: 20px;
-    height: 100%;
-    padding-right: 5px;
-    margin-top: 0;
+    font-size: 12px;
 }
 
 .searchSimForm button {
-    flex-basis: 20%;
-    background-color: #d3d3d3;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    margin-top: 0 !important;
-    color: #000000;
-    padding: 0;
+    padding: 5px;
 }
 
-.searchSimErr {
-    text-align: center;
-    flex-basis: 100%;
+.mainContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContent {
+    width: 100%;
+    height: 100%;
 }
 
 .simulationsContainer {
-    width: 100%;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 100%;
+    height: 250px;
+    width: 100%;
 }
 
-.simulationsContainer button {}
-
 .createSimBtn {
-    /* width: 10%;
-    height: 10%; */
+    margin-left: 100px;
     width: 160px;
     height: 50px;
 }
 
-.simForm {
-    width: 100vw;
-    /* margin: 0; */
-    /* margin: 0; */
-    /* flex-basis: 100%; */
-    width: 50%;
-    max-width: 100vw;
+.searchSimContainer {
+    margin-left: 100px;
+    width: 30%;
+    height: 15%;
+    flex-basis: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    height: 50%;
-    align-self: center;
-    margin-top: -20%;
+    flex-wrap: wrap;
     margin-top: -10%;
-    background-color: #fff;
-    width: 30%;
-    height: 60%;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
 }
 
-.simForm h3 {
-    font-size: 30px;
-}
+.searchSimContainer h3 {
+    margin-left: 7px;
+} */
 
-.selectNanoType {
-    flex-basis: 100%;
-    /* text-align: center; */
-    width: 600px;
-    /* border: 1px solid #000; */
-    border-radius: 15;
-    /* border-radius: 15px; */
-    /* height: 40px; */
-    /* display: flex
-; */
-    /* align-items: flex-end; */
-}
+        .userDetailsContainer p {
+            font-size: 20px;
+        }
 
-.targetingCriteria {
-    flex-basis: 100%;
-}
+        @media (max-width: 480px) {
+            .simulationsContainer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex: 1 1 100%;
+            }
+            .simulationsContainer {
+                height: 250px;
+                width: 100%;
+            }
+            .createSimBtn {
+                margin-left: 100px;
+                width: 160px;
+                height: 50px;
+            }
+            .mainContainer {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+            }
+            .mainContent {
+                width: 100%;
+                height: 100%;
+            }
+            .searchSimContainer {
+                margin-left: 100px;
+            }
+            .searchSimContainer {
+                width: 30%;
+                height: 15%;
+                flex-basis: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: -10%;
+            }
+            .searchSimContainer h3 {
+                margin-left: 7px;
+            }
+            .searchSimForm {
+                max-width: 1000px;
+                display: flex;
+                justify-content: space-between;
+                height: 30%;
+                border: 1px solid #000;
+                border-radius: 15px;
+                margin: 0;
+                width: 200px;
+                height: 40px;
+            }
+            .searchSimForm input {
+                font-size: 12px;
+            }
+            .searchSimForm button {
+                padding: 5px;
+            }
+            .mainContainer {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+            }
+            .mainContainer {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                margin-top: 0;
+            }
+            .mainContent {
+                width: 100%;
+                height: 100%;
+            }
+            .simulationsContainer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                flex: 1 1 100%;
+                height: 250px;
+                width: 100%;
+            }
+            .createSimBtn {
+                margin-left: 100px;
+                width: 160px;
+                height: 50px;
+            }
+            .searchSimContainer {
+                margin-left: 100px;
+                width: 30%;
+                height: 15%;
+                flex-basis: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: -10%;
+            }
+            .searchSimContainer h3 {
+                margin-left: 7px;
+                margin-top: -50px;
+            }
+            .asideContainer {
+                width: 28%;
+            }
+            /* .createSimBtn {
+        position: absolute;
+        top: 150px;
+    } */
+            main {
+                padding-top: 0;
+            }
+            .simulationsContainer {
+                margin-top: 40px;
+            }
+            .simDetailsContainer {
+                width: 300px;
+                transform: scale(.7);
+                margin-top: -40px;
+            }
+            .simDetails {
+                /* align-items: flex-start; */
+                /* height: 315px; */
+                /* flex: 1 1 100%; */
+                margin-top: 50px;
+            }
+            .editSimBtn {
+                margin-left: 50%;
+            }
+            .dashboardHeader {
+                font-size: 12px;
+                margin-left: 60px;
+            }
+            .updateSimForm,
+            .simForm {
+                width: 150px;
+                margin-right: 0;
+                /* margin-left: 125px; */
+                padding: 20px;
+                position: absolute;
+                /* top: 140px; */
+                height: 570px;
+                bottom: 85px;
+                left: 20%;
+                transform: scale(.8);
+                left: 40%;
+                /* flex: 1 1 40%; */
+                top: 20%;
+            }
+            .updateSimForm div,
+            .simForm div {
+                flex-basis: 100%;
+            }
+            .updateSimForm button,
+            .simForm button {
+                height: 40px;
+                font-size: 10px;
+                width: 80px;
+            }
+            .updateSimForm h3,
+            .simForm h3 {
+                height: 40px;
+                font-size: 15px;
+                width: 80px;
+            }
+            .nanoFormBackBtn {
+                padding: 0 !important;
+                height: 40px;
+                /* margin-right: 65%; */
+                border-radius: 6px;
+                background-color: #42b72a;
+                color: #fff;
+                width: 300px;
+            }
+            .nanoFormBackBtn h3 {
+                font-size: 15px;
+            }
+            .simForm,
+            .deleteSimForm {
+                width: 70%;
+                /* flex: 1 1 48%; */
+                /* margin-left: 40px; */
+                margin-right: 10px;
+                /* height: 100%; */
+                align-self: flex-start;
+                margin-top: -50px;
+            }
+            .mainContent {
+                justify-content: center;
+            }
+            .simForm,
+            .updateSimForm,
+            .deleteSimForm {
+                width: 70%;
+                /* flex: 1 1 48%; */
+                /* margin-left: 40px; */
+                margin-right: 10px;
+                /* height: 100%; */
+                align-self: flex-start;
+                margin-top: -50px;
+                position: static;
+            }
+            .deleteSimForm {
+                margin-top: 100px;
+                align-self: flex-start;
+                width: 60%;
+                margin-right: 20px;
+                height: 300px;
+            }
+            .deleteSimForm button {
+                padding: 5px;
+            }
+            .searchSimContainer {
+                margin-top: 20px;
+            }
+            .simResultsContainer {
+                flex-wrap: wrap;
+                height: 400px;
+                margin-left: 70px;
+                margin-top: 20px;
+                justify-content: center;
+            }
+            .backgroundEle {
+                height: 35%;
+                /* width: 100%; */
+                top: 120px;
+                /* left: 150px; */
+                max-width: 150px;
+            }
+            .timeLeftContainer {
+                flex: 1 1 150px;
+                width: 150px;
+                padding: 10px;
+                /* justify-content: flex-start; */
+                /* margin-left: 30%; */
+                margin-top: 0;
+                /* margin-left: 50px; */
+                /* margin-left: 20%; */
+                max-width: 150px;
+            }
+            .slider {
+                margin-left: 0;
+            }
+            .slider input {
+                margin-left: 0px;
+            }
+            .slider span {
+                margin-left: 60px;
+                margin-top: 5px;
+            }
+            .cellStateContainer {
+                flex: 1 1 100%;
+                /* width: 50px; */
+                align-self: flex-start;
+                /* width: 100px; */
+                display: flex;
+                justify-content: center;
+            }
+            .cellStateContainer .grid {
+                margin-top: 70px;
+                transform: scale(.8);
+                gap: 0;
+            }
+            .simResultsContainer {
+                flex-wrap: wrap;
+                height: 400px;
+                margin-left: 70px;
+                margin-top: 20px;
+                justify-content: center;
+            }
+            .backgroundEle {
+                height: 35%;
+                /* width: 100%; */
+                top: 120px;
+                /* left: 150px; */
+                max-width: 150px;
+            }
+            .timeLeftContainer {
+                flex: 1 1 150px;
+                width: 150px;
+                padding: 10px;
+                /* justify-content: flex-start; */
+                /* margin-left: 30%; */
+                margin-top: 0;
+                /* margin-left: 50px; */
+                /* margin-left: 20%; */
+                max-width: 150px;
+                margin-left: 10px;
+            }
+            .slider {
+                margin-left: 0;
+            }
+            .slider input {
+                margin-left: 0px;
+            }
+            .slider span {
+                margin-left: 60px;
+                margin-top: 5px;
+            }
+            .cellStateContainer {
+                flex: 1 1 100%;
+                /* width: 50px; */
+                align-self: flex-start;
+                /* width: 100px; */
+                display: flex;
+                justify-content: center;
+            }
+            .cellStateContainer .grid {
+                margin-top: 70px;
+                transform: scale(.8);
+                gap: 0;
+            }
+            .cellStateContainer .p-4 {
+                width: 80px;
+                font-size: 8px;
+                padding: 10px;
+                text-align: center;
+            }
+            .nanobotsWrapper {
+                padding-left: 25%;
+                max-width: 70%;
+            }
+            .nanoSearchForm {
+                max-width: 170px;
+            }
+            .nanoSearchContainer {
+                width: 100vw;
+            }
+            .nanoDetails {
+                /* transform: scale(.7); */
+                margin-right: 180px;
+                padding: 10px;
+                /* margin-left: -70px; */
+                max-width: 150px;
+            }
+            .nanobotContainer {
+                justify-content: center;
+                display: flex;
+                /* width: 100%; */
+                /* flex-basis: 100%; */
+                /* max-width: 200px; */
+                /* position: static; */
+                margin-right: -120px;
+                position: static;
+                margin-top: 0;
+            }
+            .nanoForm {
+                max-width: 175px;
+                /* margin-left: 145px; */
+                flex: 1 1 100%;
+                align-self: flex-start;
+                /* margin-top: -130px; */
+                margin-top: 30px;
+                margin-right: 10px;
+                position: static;
+                margin-left: 0;
+            }
+            .userLookupContainer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                height: 100px;
+                /* transform: scale(1.3); */
+                margin-left: 80px;
+                width: 80%;
+            }
+            .userLookupContainer h1 {
+                margin-left: 5px;
+                flex: 1 1 100%;
+                text-align: center;
+            }
+            .userLookup {
+                align-self: center;
+                /* max-width: 80px; */
+                width: 80%;
+                margin-left: 30px;
+            }
+            .lookupInput {
+                width: 100%;
+            }
+            .lookupBtn {
+                font-size: 8px;
+                padding: 5px;
+            }
+            .userDetailsContainer {
+                width: 100%;
+                margin-left: 0;
+            }
+            .userDetailsHeader {
+                font-size: 10px;
+            }
+            .userLookupContainer {
+                /* max-width: 80px; */
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                height: 100px;
+                /* transform: scale(1.3); */
+                margin-left: 80px;
+                width: 80%;
+            }
+            .userDetailsContainer p,
+            .userDetailsContainer div {
+                font-size: 10px;
+            }
+            .startSimBtn,
+            .stopSimBtn {
+                margin-left: 0;
+                height: 30px;
+                font-size: 10px;
+            }
+            .startSimBtn {
+                font-size: 8px !important;
+                width: 100px !important;
+            }
+            .simForm h3 {
+                font-size: 10px;
+            }
+            .cellStateContainer .p-4 {
+                width: 110px;
+                font-size: 20px;
+                padding: 10px;
+                text-align: center;
+            }
+            .nanoSearchBtn {
+                padding: 5px;
+            }
+            /* .searchSimContainer {
+                        font-size: 30px;
+                    }
+                    .simDetails {
+                        font-size: 30px;
+                    }
+                    .btnCont {
+                        font-size: 30px;
+                    }
+                    .editSimBtn {
+                        height: 50px;
+                        width: 100px;
+                    }
+                    .deleteSimButton {
+                        height: 50px;
+                        width: 100px;
+                        font-size: 25px;
+                    } */
+            /*
 
-.targetingCriteria>label {
-    font-size: 15px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
 
-.targetingCriteria>div {
-    border: 1px solid #ccc;
-    padding-left: 10px;
-}
+                    */
+        }
 
-.selectNanoType>label {
-    font-size: 15px;
-}
+        @media (max-width: 768px) {
+            .simulationsContainer {
+                align-self: center;
+                gap: 100px;
+                /* margin-top: -250px; */
+                position: absolute;
+                top: 20%;
+            }
+            .createSimBtn {
+                margin-left: 30%;
+                margin-top: 40px;
+            }
+            .searchSimContainer {
+                margin-left: 30%;
+                flex: 1 1 100%;
+            }
+            .searchSimForm {
+                flex: none;
+                width: 250px;
+            }
+            .simulationsContainer {
+                align-self: center;
+                gap: 100px;
+                position: absolute;
+                top: 100px;
+            }
+            .createSimBtn {
+                margin-left: 30%;
+                /* margin-top: 40px; */
+            }
+            .searchSimContainer {
+                margin-top: -50px;
+            }
+            .searchSimContainer h3 {
+                margin-left: 7px;
+            }
+            .searchSimForm {
+                width: 220px;
+            }
+            .simDetailsContainer {
+                flex: 1 1 100%;
+                transform: scale(.7);
+            }
+            .editSimBtn {
+                margin-left: 30%;
+            }
+            .updateSimForm {
+                position: static;
+                height: 70%;
+                margin-right: 0;
+                width: 60%;
+                align-self: flex-start;
+                margin-top: 20px;
+                margin-left: 30%;
+            }
+            .updateSimForm h3 {
+                font-size: 15px;
+            }
+            .updateSimForm div {
+                flex-basis: 100%;
+                transform: scale(.7);
+            }
+            .updateSubmitBtn {
+                height: 20px;
+                font-size: 8px;
+                margin-top: 0;
+                display: flex;
+                align-items: center;
+                /* transform: scale(.6); */
+                width: 100px;
+                height: 5%;
+                font-size: 10px;
+                margin-top: 0;
+                display: flex;
+                /* text-align: center; */
+                justify-content: center;
+                padding: 5px;
+            }
+            .mainContainer {
+                margin-top: 0;
+            }
+            .deleteSimForm {
+                width: 60%;
+                /* margin-right: 5%; */
+                align-self: center;
+                margin-top: 0;
+                margin-top: -40%;
+                margin-left: 37%;
+                /* max-width: 200px; */
+            }
+            .deleteSimBtn {
+                display: flex;
+                align-items: center;
+                font-size: 10px;
+                /* padding: 5px; */
+                width: 100px;
+            }
+            .deleteSimButton {
+                display: flex;
+                align-items: center;
+                font-size: 10px;
+                /* padding: 5px; */
+                width: 50px;
+            }
+            .btnCont {
+                display: flex;
+                /* flex: 1 1 100%; */
+                justify-content: center;
+                gap: 8px;
+            }
+            .simForm {
+                margin: 0;
+                width: 60%;
+                margin-left: 30%;
+                align-self: flex-start;
+                margin-top: 10%;
+            }
+            .simForm h3 {
+                width: 200px;
+                text-align: center;
+                font-size: 12px;
+            }
+            .simResultsContainer {
+                flex-wrap: wrap;
+                height: 400px;
+                margin-left: 70px;
+                margin-top: 20px;
+                justify-content: center;
+            }
+            .backgroundEle {
+                height: 35%;
+                /* width: 100%; */
+                top: 120px;
+                /* left: 150px; */
+                max-width: 150px;
+            }
+            .timeLeftContainer {
+                flex: 1 1 150px;
+                width: 150px;
+                padding: 10px;
+                /* justify-content: flex-start; */
+                /* margin-left: 30%; */
+                margin-top: 0;
+                /* margin-left: 50px; */
+                /* margin-left: 20%; */
+                max-width: 150px;
+                margin-left: 10px;
+            }
+            .simResultsContainer {
+                flex-wrap: wrap;
+                height: 100%;
+                margin-left: 30%;
+                margin-top: 20px;
+                justify-content: center;
+            }
+            .timeLeftContainer {
+                justify-content: center;
+                max-width: 400px;
+                font-size: 25px;
+                flex: 1 1 150px;
+                width: 150px;
+                /* padding: 10px; */
+                margin-top: 0;
+                margin-left: 10px;
+            }
+            .startSimBtn {
+                margin-left: 0;
+            }
+            .cellStateContainer {
+                margin-top: -200px;
+                /* margin-left: 100px; */
+                display: flex;
+                height: 50px;
+                flex: 1 1 100%;
+            }
+            .cellStateContainer .grid {
+                margin-left: 0;
+                /* margin-top: -200px; */
+                flex: 1 1 50px;
+                font-size: 15px;
+            }
+            .backgroundEle {
+                display: none;
+            }
+            .slider {
+                /* margin-left: 40px; */
+                flex: 1 1 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-left: 0;
+                flex-direction: row;
+            }
+            .secondsLabel {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+            .secondsLabel input {
+                max-width: 150px;
+            }
+            .secondsLabel span {
+                text-align: center;
+                margin-left: 60px;
+                margin-top: 5px;
+                flex: 1 1 100%;
+            }
+            /* .searchSimContainer {
+                        font-size: 30px;
+                    }
+                    .simDetails {
+                        font-size: 30px;
+                    }
+                    .btnCont {
+                        font-size: 30px;
+                    }
+                    .editSimBtn {
+                        height: 50px;
+                        width: 100px;
+                    }
+                    .deleteSimButton {
+                        height: 50px;
+                        width: 100px;
+                        font-size: 25px;
+                    } */
+        }
 
-.selectNanoType>select {
-    border: 1px solid #ccc;
-    border-radius: 0;
-    color: #333;
-}
+        @media(min-width:481px)and(max-width:768px) {
+            .userLookupContainer {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                height: 50%;
+                max-height: 100px;
+                position: absolute;
+                top: 30%;
+            }
+            .userLookupContainer h1 {
+                margin-left: 5px;
+                text-align: center;
+                height: 20px;
+            }
+            .userLookup {
+                flex: 1 1 100%;
+            }
+            .lookupForm {
+                margin-left: 30%;
+                flex: 1 1 100%;
+                max-width: 500px;
+            }
+            .userDetailsContainer {
+                flex: 1 1 100%;
+                justify-content: center;
+                max-width: 400px;
+                margin-left: 35%;
+                /* font-size: 50px; */
+                padding-right: 40px;
+            }
+            .userDetailsContainer p,
+            .userDetailsContainer div {
+                font-size: 30px !important;
+            }
+        }
 
-.successSimForm {
-    flex-basis: 100%;
-    text-align: center;
-}
+        @media (min-width:769px) and (max-width: 1024px) {
+            .simulationsContainer {
+                margin-top: -10px;
+                height: 60%;
+                margin-left: 150px;
+            }
+            .searchSimContainer {
+                margin-top: -90px;
+            }
+            .searchSimContainer h3 {
+                margin-left: 7px;
+            }
+            .searchSimForm {
+                height: 40px;
+                margin-top: 0;
+            }
+            .searchSimForm button {
+                padding: 5px;
+            }
+            .simDetails {
+                margin-top: 5px;
+            }
+            .simDetailsContainer {
+                transform: scale(.5);
+                margin-top: 0;
+                /* align-self: flex-start; */
+                margin-top: -50px;
+                width: 100%;
+                transform: scale(.7);
+                /* align-self: flex-start; */
+                top: 20px;
+                height: 40%;
+            }
+            .searchSimContainer h3 {
+                margin-left: 7px;
+            }
+            .searchSimForm {
+                height: 40px;
+                width: 300px;
+            }
+            .searchSimInputDiv input {
+                height: 100%;
+            }
+            .simDetails {
+                margin-top: 10px;
+            }
+            .simDetailsContainer {
+                height: 200px;
+                transform: scale(.5);
+                padding: 5px;
+            }
+            .updateSimForm {
+                /* align-self: flex-start; */
+                transform: scale(.6);
+                height: 100%;
+                /* width: 500px; */
+                flex: 1 1 250px;
+                margin-left: 200px;
+                margin-top: -160px;
+            }
+            .deleteSimForm {
+                margin-top: 0px;
+                height: 60%;
+            }
+            .deleteSimBtn {
+                display: flex;
+                align-items: center;
+                font-size: 8px;
+                width: 100px;
+                justify-content: center;
+            }
+            .deleteSimButton {
+                width: 60px !important;
+                font-size: 15px !important;
+            }
+            .btnCont {
+                display: flex;
+            }
+            .simForm {
+                align-self: center;
+                width: 50%;
+                height: 80%;
+                margin-top: -200px;
+                transform: scale(.7);
+            }
+            .simForm button:nth-of-type(2) {
+                margin-top: 5px !important;
+            }
+            .simResultsContainer {
+                position: absolute;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                /* transform: scale(.8); */
+                transform: scale(.7);
+                top: 10%;
+            }
+            .backgroundEle {
+                display: none;
+            }
+            .timeLeftContainer {
+                margin-top: 0;
+            }
+            .cellStateContainer {
+                margin-left: 35%;
+                width: 50%;
+                margin-top: 5px;
+                width: 100%;
+                margin-left: 25%;
+            }
+        }
 
-.simDetails {
-    flex-basis: 100%;
-    justify-content: center;
-    display: flex;
-}
+        @media(max-width:480px) {
+            .simulationsContainer {
+                margin-top: -50px;
+                transform: scale(.7);
+            }
+            .createSimBtn {
+                margin-top: 0;
+            }
+            .updateSubmitBtn {
+                height: 30px !important;
+                font-size: 10px !important;
+                width: 100px !important;
+                margin-top: 0 !important;
+            }
+            .updateSimForm {
+                width: 100%;
+                margin-top: -75px;
+                height: 95%;
+                transform: scale(.7);
+            }
+            .updateSimForm div {
+                margin-top: 0 !important;
+            }
+            .deleteSimForm {
+                height: 50%;
+                margin-top: -50%;
+            }
+            .deleteSimForm button:nth-of-type(2) {
+                margin-top: 5px !important;
+                justify-content: center;
+            }
+            .simForm {
+                margin-top: 0;
+                height: 90%;
+                transform: scale(.7);
+                position: absolute;
+                left: 35%;
+                margin-left: 0;
+                top: 5%;
+            }
+            .startSimBtn {
+                margin-top: 5px !important;
+                height: 20px !important;
+                display: flex;
+                align-items: center;
+                width: 120px !important;
+                font-size: 10px !important;
+                justify-content: center;
+            }
+            .simForm h3,
+            .selectNanoType {
+                margin-top: 0 !important;
+            }
+            .successSimForm {
+                font-size: 10px !important;
+                margin-top: 0 !important;
+            }
+        }
 
-.simDetailsContainer {
-    border: 1px solid black;
-    padding: 10px;
-    /* font-weight: 700; */
-    /* font-size: 25px; */
-    width: 25%;
-}
+        @media(min-width:481px) and (max-width:768px) {
+            .simulationsContainer {
+                width: 100%;
+            }
+            .createSimBtn {
+                margin-top: 0;
+            }
+            .searchSimContainer {
+                transform: scale(.6);
+                /* align-self: flex-start; */
+                margin-top: -150px;
+            }
+            .createSimBtn {
+                margin-top: -30px;
+            }
+            .searchSimContainer {
+                margin-top: -100px;
+            }
+            .updateSimForm {
+                margin-top: -75px;
+                height: 95%;
+                transform: scale(.7);
+            }
+            .deleteSimForm {
+                height: 55%;
+                margin-top: -31%;
+            }
+            .simForm {
+                margin-top: 0;
+                /* margin-top: -8%; */
+                transform: scale(.8);
+                height: 80%;
+                position: absolute;
+                top: 10%;
+            }
+            .startSimBtn {
+                margin-top: 5px !important;
+            }
+        }
 
-.simDetailsContainer>h4 {
-    font-weight: 700;
-    font-size: 25px;
-    text-align: center;
-}
+        @media(min-width:769px)and (max-width:800px) {
+            .simForm {
+                margin-right: 0;
+                margin-left: 30%;
+            }
+        }
 
-.simDetailsContainer p {
-    margin-left: 30px;
-    flex-basis: 100%;
-    text-align: left;
-}
+        @media(max-width:768px) {
+            .simResultsContainer {
+                margin-top: -20px;
+                transform: scale(.7);
+                position: absolute;
+                top: 10%;
+            }
+            .timeLeftContainer {
+                font-size: 10px;
+                flex: 1 1 100%;
+                height: 40%;
+                max-width: 300px;
+            }
+            .cellStateContainer {
+                flex: 1 1 100%;
+                max-width: 70%;
+            }
+            .grid {
+                margin-top: 80px;
+            }
+            .grid .p-4 {
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+            }
+            .slider span {
+                margin-left: 0px !important;
+                margin-top: 5px;
+                flex: 1 1 100%;
+                text-align: center;
+            }
+            .slider input {
+                max-width: 150px;
+            }
+            .secondsLabel {
+                margin-left: 0;
+            }
+        }
 
-.editSimBtn {
-    border-radius: 6px;
-    background-color: #42b72a;
-    color: #fff;
-    /* padding: 15px; */
-    width: 50px;
-    height: 30px;
-    /* flex-basis: 100%; */
-    /* position: absolute; */
-    right: 5p;
-    margin-left: 80%;
-}
+        @media(max-width:1024px) {
+            .nanoDetails {
+                font-size: 10px;
+                height: 130px;
+                transform: scale(.8);
+                /* transform: scale(.8); */
+                font-size: 10px;
+                height: 150px;
+                margin-top: -5px;
+            }
+            .createNanoBtn {
+                margin-top: -10px;
+            }
+            .nanoSearchContainer {
+                margin-top: 5px;
+            }
+        }
 
-.updateSimForm {
-    max-width: 100vw;
-    display: flex;
-    align-items: center;
-    align-self: center;
-    margin-top: -10%;
-    background-color: #fff;
-    width: 30%;
-    height: 60%;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
-}
+        @media(min-width:769px)and(max-width:1024px) {
+            .nanoForm {
+                position: absolute;
+                top: 40%;
+                left: 40%;
+            }
+        }
 
-.updateSimForm>h3 {
-    font-size: 30px;
-    flex-basis: 100%;
-    width: 600px;
-    text-align: center;
-}
+        @media(min-width:801px) and (max-width:1024px) {
+            .nanoForm {
+                margin-top: -5%;
+            }
+        }
 
-.editSimIdInput {
-    border: 1px solid #ccc;
-    border-radius: 0;
-    color: #333;
-    padding-left: 10px;
-}
+        @media(min-width:502px) and (max-width:800px) {
+            .nanobotContainer {
+                margin-top: -5%;
+            }
+            .nanoForm {
+                position: static;
+                top: 50%;
+                left: 20%;
+                /* width: 50%; */
+                align-self: center;
+                flex: 1 1 100%;
+                max-width: 250px;
+                margin-left: 40%;
+                margin-top: 30px;
+            }
+        }
 
-.selectNanoTypeEditSim {
-    border: 1px solid #ccc;
-    border-radius: 0;
-    color: #333;
-    padding-left: 5px;
-}
+        @media(max-width:500px) {
+            .nanoForm {
+                margin-top: 10px !important;
+            }
+        }
 
-.targetCriteriaLabelEditSim {
-    font-size: 15px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
+        @media(min-width:769px) and (max-width:1024px) {
+            #signUpForm {
+                left: 30%;
+                flex: 1 1 100%;
+                font-size: 10px;
+                position: absolute;
+                top: 20%;
+                margin-top: -18px;
+                transform: scale(.9);
+            }
+            .dashboardHeader {
+                margin-left: 0;
+            }
+        }
 
-.deleteSimForm {
-    background-color: #fff;
-    width: 30%;
-    height: 30%;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10%;
-}
+        @media(min-width:601px) and (max-width:768px) {
+            #signUpForm {
+                left: 30%;
+                flex: 1 1 100%;
+                font-size: 10px;
+                position: absolute;
+                top: 20%;
+                margin-top: -18px;
+                transform: scale(.9);
+            }
+            .dashboardHeader {
+                margin-left: 0;
+            }
+        }
 
-.deleteSimForm>h3 {
-    height: 40px;
-}
+        @media(min-width:450px) and (max-width:600px) {
+            #signUpForm {
+                left: 20%;
+                flex: 1 1 100%;
+                font-size: 10px;
+                position: absolute;
+                top: 20%;
+                margin-top: -18px;
+                transform: scale(.9);
+            }
+            .dashboardHeader {
+                margin-left: 0;
+            }
+        }
 
-.deleteSimInputDiv {
-    border-radius: 6px;
-    width: 90%;
-    /* height: 12%; */
-    /* padding-left: 10px; */
-    border: 1px solid #dddfe2;
-    /* margin-top: 0; */
-    flex-basis: 100%;
-    height: 40px;
-}
+        @media(min-width:400px) and (max-width:449px) {
+            #signUpForm {
+                left: 12%;
+                flex: 1 1 100%;
+                font-size: 10px;
+                position: absolute;
+                top: 20%;
+                margin-top: -18px;
+                transform: scale(.9);
+            }
+            .dashboardHeader {
+                margin-left: 0;
+            }
+        }
 
-.deleteSimForm>input {
-    width: 100%;
-    height: 100%;
-    margin-top: 0;
-    padding-left: 10px;
-}
+        @media(max-width:399px) {
+            #signUpForm {
+                left: 8%;
+                flex: 1 1 100%;
+                font-size: 10px;
+                position: absolute;
+                top: 20%;
+                margin-top: -18px;
+                transform: scale(.9);
+            }
+            .dashboardHeader {
+                margin-left: 0;
+            }
+        }
 
-.deleteSimFormInput {
-    width: 100%;
-    height: 100%;
-    margin-top: 0;
-    padding-left: 10px;
-}
+        @media(min-width:769px) and (max-width:1024px) {
+            #loginWrapper {
+                width: 100%;
+            }
+            #loginContainer {
+                height: 350px;
+                flex: 1 1 100%;
+                transform: scale(.7);
+                margin-top: 12%;
+                max-width: 500px;
+            }
+        }
 
-.editSimBtn {
-    border-radius: 6px;
-    background-color: #42b72a;
-    color: #fff;
-    width: 50px;
-    height: 30px;
-    right: 5p;
-    margin-left: 70%;
-}
+        @media(min-width:501px) and (max-width:768px) {
+            #loginWrapper {
+                width: 100%;
+            }
+            #loginContainer {
+                height: 350px;
+                flex: 1 1 100%;
+                transform: scale(.7);
+                margin-top: 8%;
+                max-width: 500px;
+            }
+        }
 
-.deleteSimBtn {
-    border-radius: 6px;
-    background-color: #42b72a;
-    color: #fff;
-    height: 30px;
-    right: 5p;
-    /* margin-left: 90%; */
-    margin-left: 5px;
-    /* padding: 5px; */
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 70px;
-}
+        @media(max-width:500px) {
+            #loginWrapper {
+                width: 100%;
+            }
+            #loginContainer {
+                height: 350px;
+                flex: 1 1 100%;
+                transform: scale(.7);
+                margin-top: 3%;
+                max-width: 500px;
+            }
+        }
+        /* .or {
+            position: absolute;
+        } */
+
+        @media(min-width:1025px) {
+            .simulationsContainer {
+                height: 60%;
+            }
+            .btnCont {
+                margin-left: 100px;
+            }
+            .editSimBtn {
+                margin-left: 0;
+            }
+            .deleteSimBtn {
+                width: 130px;
+                height: 40px;
+                font-size: 12px;
+            }
+            .deleteSimButton {
+                width: 60px;
+                height: 30px;
+                font-size: 15px;
+                text-align: center;
+            }
+            .cellStateContainer {
+                position: absolute;
+                right: 200px;
+            }
+            .timeLeftContainer {
+                margin-top: 150px;
+            }
+            .cellStateContainer .grid {
+                min-width: 500px;
+            }
+        }

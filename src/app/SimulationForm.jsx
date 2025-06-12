@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 
-export default function SimulationForm({ onSubmit, simulationResults, userId,setSimulationResults,setNanobots,nanobots }) {
+export default function SimulationForm({ setRepairDamaged,setNanobotId,setTargetCancer,success,setSuccess,setIsValid,count,setCount,isValid,repairDamaged,targetCancer,nanobotId,handleSubmit,setSimPage,setResultsPage,setAddSim,onSubmit, simulationResults, userId,setSimulationResults,setNanobots,nanobots }) {
 
     const [nanobotType, setNanobotType] = useState('repair');
-    const [targetCancer, setTargetCancer] = useState(false);
-    const [repairDamaged, setRepairDamaged] = useState(false);
-    const [isValid, setIsValid] = useState(true);
-    const [count, setCount] = useState(0);
-    const [nanobotId, setNanobotId] = useState('');
-    const [success, setSuccess] = useState('');
+    // const [targetCancer, setTargetCancer] = useState(false);
+    // const [repairDamaged, setRepairDamaged] = useState(false);
+    // const [isValid, setIsValid] = useState(true);
+    // const [count, setCount] = useState(0);
+    // const [nanobotId, setNanobotId] = useState('');
+    // const [success, setSuccess] = useState('');
     // const backendUrl = 'http://a7f784e35db984efbbb175fb2dc129c0-486246873.us-east-1.elb.amazonaws.com';
     const backendUrl = 'https://nanobot-backend.onrender.com/';
+
 
 
     useEffect(() => {
@@ -40,84 +41,94 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
         fetchNanobotTypes();
     }, []);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
 
-        if (!nanobotId || (!targetCancer && !repairDamaged)) {
-            setIsValid(false);
-            return;
-        }
-        setIsValid(true);
-        // setCount((prevCount) => prevCount + 1);
 
-        try {
-            let simPayload = {
-                nanobotId,
-                cells: simulationResults, // Existing cell states
-            };
+    const startSim = () => {
+        console.log('start sim');
+        // setResultsPage(true);
+        // setAddSim(false);
+        // setSimPage(false);
+    }
 
-            // Send simulation request to backend
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
 
-            const simNanoResponse = await fetch(`${backendUrl}simulate-nanobot`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(simPayload),
-            });
-            if (!simNanoResponse.ok) {
-                throw new Error('Failed to simulate nanobot behavior');
-            }
-            const simNanoData = await simNanoResponse.json();
-            console.log('Simulation results:', simNanoData);
-            setSimulationResults(simNanoData.results);
-            // setSuccess(data.message);
-            // Fetch selected nanobot details
-            const response = await fetch(`${backendUrl}nanobots/${nanobotId}`);
-            if (!response.ok) {
-                throw new Error('Nanobot not found');
-            }
+    //     if (!nanobotId || (!targetCancer && !repairDamaged)) {
+    //         setIsValid(false);
+    //         return;
+    //     }
+    //     setIsValid(true);
+    //     // setCount((prevCount) => prevCount + 1);
 
-            const data = await response.json();
-            console.log('Fetched nanobot data:', data);
+    //     try {
+    //         let simPayload = {
+    //             nanobotId,
+    //             cells: simulationResults, // Existing cell states
+    //         };
 
-            simPayload = {
-                simulationName: `Simulation ${count}: Nanobot type: ${data.name}`,
-                status: 'in-progress',
-                startTime: Date.now(),
-                userId,
-                nanobotId: data.id,
-                results: simNanoData.results,
-            };
-            console.log('simPayload',simPayload);
+    //         // Send simulation request to backend
 
-            // Start the simulation
-            const simResponse = await fetch(`${backendUrl}simulations`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(simPayload),
-            });
+    //         const simNanoResponse = await fetch(`${backendUrl}simulate-nanobot`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(simPayload),
+    //         });
+    //         if (!simNanoResponse.ok) {
+    //             throw new Error('Failed to simulate nanobot behavior');
+    //         }
+    //         const simNanoData = await simNanoResponse.json();
+    //         console.log('Simulation results:', simNanoData);
+    //         setSimulationResults(simNanoData.results);
+    //         // setSuccess(data.message);
+    //         // Fetch selected nanobot details
+    //         const response = await fetch(`${backendUrl}nanobots/${nanobotId}`);
+    //         if (!response.ok) {
+    //             throw new Error('Nanobot not found');
+    //         }
 
-            if (!simResponse.ok) {
-                throw new Error('Failed to create simulation');
-            }
+    //         const data = await response.json();
+    //         console.log('Fetched nanobot data:', data);
 
-            const simData = await simResponse.json();
-            console.log('Simulation created:', simData);
-            setCount((prevCount) => prevCount + 1);
+    //         simPayload = {
+    //             simulationName: `Simulation ${count}: Nanobot type: ${data.name}`,
+    //             status: 'in-progress',
+    //             startTime: Date.now(),
+    //             userId,
+    //             nanobotId: data.id,
+    //             results: simNanoData.results,
+    //         };
+    //         console.log('simPayload',simPayload);
 
-            setSuccess('Simulation started successfully!');
-            onSubmit(simPayload);
-        } catch (error) {
-            console.error('Error starting simulation:', error);
-        }
-    };
+    //         // Start the simulation
+    //         const simResponse = await fetch(`${backendUrl}simulations`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(simPayload),
+    //         });
+
+    //         if (!simResponse.ok) {
+    //             throw new Error('Failed to create simulation');
+    //         }
+
+    //         const simData = await simResponse.json();
+    //         console.log('Simulation created:', simData);
+    //         setCount((prevCount) => prevCount + 1);
+
+    //         setSuccess('Simulation started successfully!');
+    //         onSubmit(simPayload);
+    //     } catch (error) {
+    //         console.error('Error starting simulation:', error);
+    //     }
+    // };
 
     return (
         <>
             <form  onSubmit={handleSubmit} className="simForm space-y-4 p-4 bg-white shadow-md rounded-lg">
+            <button className="nanoFormBackBtn" onClick={()=>setAddSim(false)}>Back</button>
                 <h3 className="text-lg font-semibold">Simulation Parameters</h3>
 
                 <div className="selectNanoType">
@@ -172,8 +183,9 @@ export default function SimulationForm({ onSubmit, simulationResults, userId,set
                 )}
 
                 <button
+                    // onClick={startSim}
                     type="submit"
-                    className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    className="startSimBtn mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
                 >
                     Start Simulation
                 </button>

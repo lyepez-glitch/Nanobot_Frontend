@@ -29,7 +29,7 @@ const UserLookupForm = () => {
   };
 
   return (
-    <div classname="userLookupContainer">
+    <div className="userLookupContainer">
      <h1 style={{marginLeft:'5px'}}>Look Up User by ID</h1>
     <div className="userLookup">
 
@@ -49,9 +49,9 @@ const UserLookupForm = () => {
       {user && (
         <div className="userDetailsContainer">
           <h2 className="userDetailsHeader">User Details</h2>
-          <p style={{fontSize:'20px'}} className="margin-left">{user.username}</p>
+          <p  className="margin-left">{user.username}</p>
           <div className="margin-left userUsername">username</div>
-          <p style={{fontSize:'20px'}} className="margin-left">{user.email}</p>
+          <p className="margin-left">{user.email}</p>
           <div className="margin-left userEmail">email</div>
         </div>
       )}

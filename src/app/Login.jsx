@@ -17,6 +17,12 @@ const Login = ({setUserId,setLoggedIn,setSignUp}) => {
     }
   }, [successMessage]);
 
+  const handleSignUpLink = () =>{
+    console.log('handle signup link');
+    setSignUp(false);
+    setLoggedIn(false);
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
@@ -106,7 +112,7 @@ const Login = ({setUserId,setLoggedIn,setSignUp}) => {
         </div>
         <p className="loginInputDiv text-center mt-4 text-gray-600">
           Don't have an account?{' '}
-          <a href="/signup" className="text-blue-500 hover:underline">
+          <a onClick = {handleSignUpLink} className="text-blue-500 hover:underline">
             Sign Up
           </a>
         </p>

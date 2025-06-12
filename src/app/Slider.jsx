@@ -10,8 +10,8 @@ export default function Slider({ min, max, step, label, onChange }) {
     };
 
     return (
-        <div className="flex flex-col items-start">
-            <label className="mb-2">{label}</label>
+        <div className="slider flex flex-col items-start">
+            <label className="secondsLabel mb-2">{label}</label>
             <input
                 type="range"
                 min={min}
@@ -21,7 +21,7 @@ export default function Slider({ min, max, step, label, onChange }) {
                 onChange={handleChange}
                 className="slider"
             />
-            <span>{value}</span>
+            <span style={{marginLeft: '60px',marginTop: '5px'}}>{value}</span>
         </div>
     );
 }

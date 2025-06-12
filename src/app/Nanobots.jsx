@@ -13,7 +13,7 @@ const Nanobots = ({setAddNano}) => {
   }
 
   return (
-    <div>
+    <div className="nanobotsWrapper">
       <button onClick={(e)=>{handleAddNanoClick(e)}} className= "createNanoBtn" type="submit">Create Nanobot</button>
       <NanobotSearchForm/>
 

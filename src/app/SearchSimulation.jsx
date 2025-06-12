@@ -70,8 +70,11 @@ export default function SearchSimulation({setDeleteSim,setEditSim}) {
           <p><strong>Status:</strong> {simulationData.status}</p>
           <p><strong>Start Time:</strong> {new Date(simulationData.startTime).toLocaleString()}</p>
           <p><strong>User ID:</strong> {simulationData.userId}</p>
-          <button onClick = {(e)=>handleEditSimClick(e)} className="editSimBtn">Edit</button>
-          <button onClick = {(e)=>handleDeleteSimClick(e)} className="deleteSimBtn">Delete</button>
+          <div className="btnCont">
+            <button onClick = {(e)=>handleEditSimClick(e)} className="editSimBtn">Edit</button>
+            <button onClick = {(e)=>handleDeleteSimClick(e)} className="deleteSimButton deleteSimBtn">Delete</button>
+          </div>
+
         </div>
 
       )}
