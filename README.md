@@ -1,5 +1,6 @@
 🧠 Nanobot Simulation App
 
+
 This is a full-stack web application that allows users to:
 
 ✅ Sign up and log in
@@ -10,14 +11,18 @@ This is a full-stack web application that allows users to:
 
 🔍 Look up users, nanobots, and simulations by their IDs
 
+
 Built using Next.js 15, TailwindCSS, and connected to a backend (hosted separately) using MySQL and Express.js.
+
 
 🚀 Live Demo
 Frontend: https://nanobot-frontend.vercel.app
 
 🛠 You’ll need to run the backend server (see "Backend Setup") for full functionality.
 
+
 🖥 Features
+
 User registration & login
 
 Create, view, and manage nanobots
@@ -28,6 +33,7 @@ View simulations and nanobots by ID
 
 Sleek responsive UI powered by Tailwind CSS
 
+
 📦 Tech Stack
 Frontend: Next.js, React, TailwindCSS
 
@@ -35,7 +41,9 @@ Backend: Node.js, Express, MySQL (hosted via FreeSQLDatabase.com)
 
 Hosting: Vercel (frontend), Render.com (backend)
 
+
 🧪 Getting Started (Frontend)
+
 1. Clone the repo
 
 git clone https://github.com/your-username/nanobot-frontend.git
@@ -51,6 +59,7 @@ npm install
 npm run dev
 
 Now go to http://localhost:3000 in your browser.
+
 
 🔌 Backend Setup (Required)
 The backend is responsible for authentication, nanobot and simulation storage.
